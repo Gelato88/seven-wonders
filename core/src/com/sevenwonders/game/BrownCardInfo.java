@@ -23,7 +23,7 @@ public class BrownCardInfo {
         this.clay = clay;
         this.stone = stone;
 
-        printCardInfo();
+        //printCardInfo();
     }
 
     //debug
@@ -33,5 +33,4 @@ public class BrownCardInfo {
         System.out.println("Age: " + age + ", Coin cost: " + coinCost);
         System.out.println("Lumber: " + lumber + " Ore: " + ore + " Clay: " + clay + " Stone: " + stone);
     }
-
 }

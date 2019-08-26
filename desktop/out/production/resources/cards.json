@@ -154,5 +154,61 @@
 	  "clay": 0,
 	  "stone": 2
 	}
+  ],
+  "grayCards": [
+    {
+	  "id": 0,
+	  "age": 1,
+	  "name": "Loom",
+	  "texture": "tempCard",
+	  "textile": 1,
+	  "glass": 0,
+	  "papyrus": 0
+	},
+    {
+	  "id": 1,
+	  "age": 1,
+	  "name": "Glassworks",
+	  "texture": "tempCard",
+	  "textile": 0,
+	  "glass": 1,
+	  "papyrus": 0
+	},
+    {
+	  "id": 2,
+	  "age": 1,
+	  "name": "Press",
+	  "texture": "tempCard",
+	  "textile": 0,
+	  "glass": 0,
+	  "papyrus": 1
+	},
+    {
+	  "id": 3,
+	  "age": 2,
+	  "name": "Loom",
+	  "texture": "tempCard",
+	  "textile": 1,
+	  "glass": 0,
+	  "papyrus": 0
+	},
+    {
+	  "id": 4,
+	  "age": 2,
+	  "name": "Glassworks",
+	  "texture": "tempCard",
+	  "textile": 0,
+	  "glass": 1,
+	  "papyrus": 0
+	},
+    {
+	  "id": 5,
+	  "age": 2,
+	  "name": "Press",
+	  "texture": "tempCard",
+	  "textile": 0,
+	  "glass": 0,
+	  "papyrus": 1
+	},
   ]
 }
