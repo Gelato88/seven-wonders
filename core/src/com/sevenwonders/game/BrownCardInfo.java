@@ -22,15 +22,5 @@ public class BrownCardInfo {
         this.ore = ore;
         this.clay = clay;
         this.stone = stone;
-
-        //printCardInfo();
-    }
-
-    //debug
-    private void printCardInfo() {
-        System.out.println();
-        System.out.println("CARD: " + name + ", ID: " + id + ", TEXTURE FILE: " + texture);
-        System.out.println("Age: " + age + ", Coin cost: " + coinCost);
-        System.out.println("Lumber: " + lumber + " Ore: " + ore + " Clay: " + clay + " Stone: " + stone);
     }
 }

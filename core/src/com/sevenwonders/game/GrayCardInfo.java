@@ -18,15 +18,5 @@ public class GrayCardInfo {
         this.textile = textile;
         this.glass = glass;
         this.papyrus = papyrus;
-
-        //printCardInfo();
-    }
-
-    //debug
-    private void printCardInfo() {
-        System.out.println();
-        System.out.println("CARD: " + name + ", ID: " + id + ", TEXTURE FILE: " + texture);
-        System.out.println("Age: " + age);
-        System.out.println("Textile: " + textile + " Glass: " + glass + " Papyrus: " + papyrus);
     }
 }
