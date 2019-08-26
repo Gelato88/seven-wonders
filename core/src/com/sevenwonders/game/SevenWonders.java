@@ -14,6 +14,7 @@ public class SevenWonders extends ApplicationAdapter {
 		Gdx.app.log("SevenWonders", "Hello, World!");
 		batch = new SpriteBatch();
 		renderer = new Renderer(batch);
+		CardFactory cardFactory = new CardFactory("brownCards.json");
 	}
 
 	@Override

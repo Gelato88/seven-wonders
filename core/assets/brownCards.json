@@ -1,0 +1,158 @@
+{
+  "brownCards": [
+    {
+	  "id": 0,
+	  "age": 1,
+	  "name": "Lumber Yard",
+	  "texture": "tempCard",
+	  "coinCost": 0,
+	  "lumber": 1,
+	  "ore": 0,
+	  "clay": 0,
+	  "stone": 0
+	},
+	{
+	  "id": 1,
+	  "age": 1,
+	  "name": "Ore Vein",
+	  "texture": "tempCard",
+	  "coinCost": 0,
+	  "lumber": 0,
+	  "ore": 1,
+	  "clay": 0,
+	  "stone": 0
+	},
+	{
+	  "id": 2,
+	  "age": 1,
+	  "name": "Clay Pool",
+	  "texture": "tempCard",
+	  "coinCost": 0,
+	  "lumber": 0,
+	  "ore": 0,
+	  "clay": 1,
+	  "stone": 0
+	},
+	{
+	  "id": 3,
+	  "age": 1,
+	  "name": "Stone Pit",
+	  "texture": "tempCard",
+	  "coinCost": 0,
+	  "lumber": 0,
+	  "ore": 0,
+	  "clay": 0,
+	  "stone": 1
+	},
+	{
+	  "id": 4,
+	  "age": 1,
+	  "name": "Timber Yard",
+	  "texture": "tempCard",
+	  "coinCost": 1,
+	  "lumber": 1,
+	  "ore": 0,
+	  "clay": 0,
+	  "stone": 1
+	},
+	{
+	  "id": 5,
+	  "age": 1,
+	  "name": "Clay Pit",
+	  "texture": "tempCard",
+	  "coinCost": 1,
+	  "lumber": 0,
+	  "ore": 1,
+	  "clay": 1,
+	  "stone": 0
+	},
+	{
+	  "id": 6,
+	  "age": 1,
+	  "name": "Excavation",
+	  "texture": "tempCard",
+	  "coinCost": 1,
+	  "lumber": 0,
+	  "ore": 0,
+	  "clay": 1,
+	  "stone": 1
+	},
+	{
+	  "id": 7,
+	  "age": 1,
+	  "name": "Forest Cave",
+	  "texture": "tempCard",
+	  "coinCost": 1,
+	  "lumber": 1,
+	  "ore": 1,
+	  "clay": 0,
+	  "stone": 0
+	},
+	{
+	  "id": 8,
+	  "age": 1,
+	  "name": "Tree Fram",
+	  "texture": "tempCard",
+	  "coinCost": 1,
+	  "lumber": 1,
+	  "ore": 0,
+	  "clay": 1,
+	  "stone": 0
+	},
+	{
+	  "id": 9,
+	  "age": 1,
+	  "name": "Mine",
+	  "texture": "tempCard",
+	  "coinCost": 1,
+	  "lumber": 0,
+	  "ore": 1,
+	  "clay": 0,
+	  "stone": 1
+	},
+	{
+	  "id": 10,
+	  "age": 2,
+	  "name": "Sawmill",
+	  "texture": "tempCard",
+	  "coinCost": 1,
+	  "lumber": 2,
+	  "ore": 0,
+	  "clay": 0,
+	  "stone": 0
+	},
+	{
+	  "id": 11,
+	  "age": 2,
+	  "name": "Foundry",
+	  "texture": "tempCard",
+	  "coinCost": 1,
+	  "lumber": 0,
+	  "ore": 2,
+	  "clay": 0,
+	  "stone": 0
+	},
+	{
+	  "id": 12,
+	  "age": 2,
+	  "name": "Brickyard",
+	  "texture": "tempCard",
+	  "coinCost": 1,
+	  "lumber": 0,
+	  "ore": 0,
+	  "clay": 2,
+	  "stone": 0
+	},
+	{
+	  "id": 13,
+	  "age": 2,
+	  "name": "Quarry",
+	  "texture": "tempCard",
+	  "coinCost": 1,
+	  "lumber": 0,
+	  "ore": 0,
+	  "clay": 0,
+	  "stone": 2
+	}
+  ]
+}
