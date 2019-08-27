@@ -20,7 +20,7 @@ public class Renderer {
     Renderer(SpriteBatch batch) {
 
         this.batch = batch;
-        img = new Texture(Gdx.files.internal("kneeboi2.png"));
+        img = new Texture(Gdx.files.internal("textures/TopBarBackground.png"));
         img2 = new Sprite(img);
         img2.setSize(Settings.RESOLUTION.x, Settings.RESOLUTION.y);
     }

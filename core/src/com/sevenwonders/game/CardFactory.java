@@ -15,6 +15,7 @@ public class CardFactory {
     private Map<Integer, BlueCardInfo> blueCards;
     private Map<Integer, RedCardInfo> redCards;
     private Map<Integer, GreenCardInfo> greenCards;
+    private Map<Integer, PurpleCardInfo> purpleCards;
 
     public CardFactory(String path) {
         brownCards = new HashMap<Integer, BrownCardInfo>();
@@ -23,6 +24,7 @@ public class CardFactory {
         blueCards = new HashMap<Integer, BlueCardInfo>();
         redCards = new HashMap<Integer, RedCardInfo>();
         greenCards = new HashMap<Integer, GreenCardInfo>();
+        purpleCards = new HashMap<Integer, PurpleCardInfo>();
         JsonReader reader = new JsonReader();
         loadBrownCards(reader, path);
         loadGrayCards(reader, path);
@@ -30,6 +32,7 @@ public class CardFactory {
         loadBlueCards(reader, path);
         loadRedCards(reader, path);
         loadGreenCards(reader, path);
+        loadPurpleCards(reader, path);
     }
 
     private void loadBrownCards(JsonReader reader, String path) {
@@ -146,6 +149,36 @@ public class CardFactory {
             greenCards.put(id, info);
         }
         Gdx.app.log("CardFactory", "Completed loading green cards.");
+    }
+
+    private void loadPurpleCards(JsonReader reader, String path) {
+        JsonValue root = reader.parse(Gdx.files.internal(path)).get("purpleCards");
+        for(JsonValue card : root) {
+            int id = card.getInt("id");
+            int age = card.getInt("age");
+            String name = card.getString("name");
+            String texture = card.getString("texture");
+            int pointsPerSideBrown = card.getInt("pointsPerSideBrown");
+            int pointsPerSideGray = card.getInt("pointsPerSideGray");
+            int pointsPerSideYellow = card.getInt("pointsPerSideYellow");
+            int pointsPerSideBlue = card.getInt("pointsPerSideBlue");
+            int pointsPerSideWonderStage = card.getInt("pointsPerSideWonderStage");
+            int pointsPerSideGreen = card.getInt("pointsPerSideGreen");
+            int pointsPerSideRed = card.getInt("pointsPerSideRed");
+            int pointsPerSideLoss = card.getInt("pointsPerSideLoss");
+            int pointsPerBrown = card.getInt("pointsPerBrown");
+            int pointsPerGray = card.getInt("pointsPerGray");
+            int pointsPerPurple = card.getInt("pointsPerPurple");
+            int pointsPerWonderStage = card.getInt("pointsPerWonderStage");
+            int chooseGreen = card.getInt("chooseGreen");
+
+            PurpleCardInfo info =  new PurpleCardInfo(id, age, name, texture, pointsPerSideBrown, pointsPerSideGray,
+                    pointsPerSideYellow, pointsPerSideBlue, pointsPerSideWonderStage, pointsPerSideGreen,
+                    pointsPerSideRed, pointsPerSideLoss, pointsPerBrown, pointsPerGray, pointsPerPurple,
+                    pointsPerWonderStage, chooseGreen);
+            purpleCards.put(id, info);
+        }
+        Gdx.app.log("CardFactory", "Completed loading purple cards.");
     }
 
 }
