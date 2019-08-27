@@ -33,6 +33,7 @@ public class CardFactory {
         loadRedCards(reader, path);
         loadGreenCards(reader, path);
         loadPurpleCards(reader, path);
+        System.out.println();
     }
 
     private void loadBrownCards(JsonReader reader, String path) {

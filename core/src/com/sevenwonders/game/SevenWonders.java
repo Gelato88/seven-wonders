@@ -2,6 +2,7 @@ package com.sevenwonders.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import com.sevenwonders.game.Cards.CardFactory;
 
 public class SevenWonders extends ApplicationAdapter {
@@ -14,6 +15,7 @@ public class SevenWonders extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		renderer = new Renderer(batch);
 		CardFactory cardFactory = new CardFactory("json/cards.json");
+		DeckManager deckManager = new DeckManager("json/decks.json", cardFactory);
 	}
 
 	@Override
