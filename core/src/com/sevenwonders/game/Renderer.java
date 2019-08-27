@@ -21,11 +21,9 @@ public class Renderer {
     Renderer(SpriteBatch batch) {
 
         this.batch = batch;
-        img = new Texture(Gdx.files.internal("kneeboi2.png"));
-        topBarBackground = new Texture(Gdx.files.internal("TopBarBackground.png"));
+        topBarBackground = new Texture(Gdx.files.internal("textures/TopBarBackground.png"));
         img2 = new Sprite(topBarBackground);
         img2.setPosition(0, 880);
-        //img2.setSize(Settings.RESOLUTION.x, Settings.RESOLUTION.y);
     }
 
     public void draw() {
