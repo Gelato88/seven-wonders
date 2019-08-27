@@ -250,4 +250,32 @@ public class CardFactory {
         Gdx.app.log("CardFactory", "Completed loading purple cards.");
     }
 
+    public BrownCard createBrownCard(int id) {
+        return new BrownCard(brownCards.get(id));
+    }
+
+    public GrayCard createGrayCard(int id) {
+        return new GrayCard(grayCards.get(id));
+    }
+
+    public YellowCard createYellowCard(int id) {
+        return new YellowCard(yellowCards.get(id));
+    }
+
+    public BlueCard createBlueCard(int id) {
+        return new BlueCard(blueCards.get(id));
+    }
+
+    public RedCard createRedCard(int id) {
+        return new RedCard(redCards.get(id));
+    }
+
+    public GreenCard createGreenCard(int id) {
+        return new GreenCard(greenCards.get(id));
+    }
+
+    public PurpleCard createPurpleCard(int id) {
+        return new PurpleCard(purpleCards.get(id));
+    }
+
 }

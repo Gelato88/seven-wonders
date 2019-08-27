@@ -1,6 +1,6 @@
 package com.sevenwonders.game;
 
-public class GrayCardInfo {
+public class GrayCardInfo extends CardInfo {
 
     protected int id;
     protected int age;
@@ -10,18 +10,10 @@ public class GrayCardInfo {
     protected int glass;
     protected int papyrus;
 
-    protected int coinCost;
-    protected int lumberCost;
-    protected int oreCost;
-    protected int clayCost;
-    protected int stoneCost;
-    protected int textileCost;
-    protected int glassCost;
-    protected int papyrusCost;
-
     GrayCardInfo(int id, int age, String name, String texture, int textile, int glass, int papyrus, int coinCost,
                  int lumberCost, int oreCost, int clayCost, int stoneCost, int textileCost, int glassCost,
                  int papyrusCost) {
+        super(coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost);
         this.id = id;
         this.age = age;
         this.name = name;
@@ -29,14 +21,5 @@ public class GrayCardInfo {
         this.textile = textile;
         this.glass = glass;
         this.papyrus = papyrus;
-
-        this.coinCost = coinCost;
-        this.lumberCost = lumberCost;
-        this.oreCost = oreCost;
-        this.clayCost = clayCost;
-        this.stoneCost = stoneCost;
-        this.textileCost = textileCost;
-        this.glassCost = glassCost;
-        this.papyrusCost = papyrusCost;
     }
 }

@@ -1,6 +1,6 @@
 package com.sevenwonders.game;
 
-public class BrownCardInfo {
+public class BrownCardInfo extends CardInfo {
 
     protected int id;
     protected int age;
@@ -11,18 +11,10 @@ public class BrownCardInfo {
     protected int clay;
     protected int stone;
 
-    protected int coinCost;
-    protected int lumberCost;
-    protected int oreCost;
-    protected int clayCost;
-    protected int stoneCost;
-    protected int textileCost;
-    protected int glassCost;
-    protected int papyrusCost;
-
     BrownCardInfo(int id, int age, String name, String texture, int lumber, int ore, int clay, int stone, int coinCost,
                   int lumberCost, int oreCost, int clayCost, int stoneCost, int textileCost, int glassCost,
                   int papyrusCost) {
+        super(coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost);
         this.id = id;
         this.age = age;
         this.name = name;
@@ -31,14 +23,5 @@ public class BrownCardInfo {
         this.ore = ore;
         this.clay = clay;
         this.stone = stone;
-
-        this.coinCost = coinCost;
-        this.lumberCost = lumberCost;
-        this.oreCost = oreCost;
-        this.clayCost = clayCost;
-        this.stoneCost = stoneCost;
-        this.textileCost = textileCost;
-        this.glassCost = glassCost;
-        this.papyrusCost = papyrusCost;
     }
 }

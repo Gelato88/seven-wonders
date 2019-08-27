@@ -1,6 +1,6 @@
 package com.sevenwonders.game;
 
-public class YellowCardInfo {
+public class YellowCardInfo extends CardInfo {
 
     protected int id;
     protected int age;
@@ -23,21 +23,13 @@ public class YellowCardInfo {
     protected int pointsPerBrown;
     protected int pointsPerGray;
 
-    protected int coinCost;
-    protected int lumberCost;
-    protected int oreCost;
-    protected int clayCost;
-    protected int stoneCost;
-    protected int textileCost;
-    protected int glassCost;
-    protected int papyrusCost;
-
     YellowCardInfo(int id, int age, String name, String texture, int leftBrownDiscount, int rightBrownDiscount,
                    int grayDiscount, int coins, int chooseBrown, int chooseGray, int coinsPerSideBrown,
                    int coinsPerBrown, int coinsPerSideGray, int coinsPerGray, int coinsPerWonderStage,
                    int coinsPerYellow, int pointsPerWonderStage, int pointsPerYellow, int pointsPerBrown,
                    int pointsPerGray, int coinCost, int lumberCost, int oreCost, int clayCost, int stoneCost,
                    int textileCost, int glassCost, int papyrusCost) {
+        super(coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost,papyrusCost);
         this.id = id;
         this.age = age;
         this.name = name;
@@ -58,14 +50,5 @@ public class YellowCardInfo {
         this.pointsPerYellow = pointsPerYellow;
         this.pointsPerBrown = pointsPerBrown;
         this.pointsPerGray = pointsPerGray;
-
-        this.coinCost = coinCost;
-        this.lumberCost = lumberCost;
-        this.oreCost = oreCost;
-        this.clayCost = clayCost;
-        this.stoneCost = stoneCost;
-        this.textileCost = textileCost;
-        this.glassCost = glassCost;
-        this.papyrusCost = papyrusCost;
     }
 }
