@@ -2,28 +2,38 @@ package com.sevenwonders.game;
 
 public class PurpleCardInfo {
 
-    private int id;
-    private int age;
-    private String name;
-    private String texture;
-    private int pointsPerSideBrown;
-    private int pointsPerSideGray;
-    private int pointsPerSideYellow;
-    private int pointsPerSideBlue;
-    private int pointsPerSideWonderStage;
-    private int pointsPerSideGreen;
-    private int pointsPerSideRed;
-    private int pointsPerSideLoss;
-    private int pointsPerBrown;
-    private int pointsPerGray;
-    private int pointsPerPurple;
-    private int pointsPerWonderStage;
-    private int chooseGreen;
+    protected int id;
+    protected int age;
+    protected String name;
+    protected String texture;
+    protected int pointsPerSideBrown;
+    protected int pointsPerSideGray;
+    protected int pointsPerSideYellow;
+    protected int pointsPerSideBlue;
+    protected int pointsPerSideWonderStage;
+    protected int pointsPerSideGreen;
+    protected int pointsPerSideRed;
+    protected int pointsPerSideLoss;
+    protected int pointsPerBrown;
+    protected int pointsPerGray;
+    protected int pointsPerPurple;
+    protected int pointsPerWonderStage;
+    protected int chooseGreen;
+
+    protected int coinCost;
+    protected int lumberCost;
+    protected int oreCost;
+    protected int clayCost;
+    protected int stoneCost;
+    protected int textileCost;
+    protected int glassCost;
+    protected int papyrusCost;
 
     PurpleCardInfo(int id, int age, String name, String texture, int pointsPerSideBrown, int pointsPerSideGray,
                    int pointsPerSideYellow, int pointsPerSideBlue, int pointsPerSideWonderStage, int pointsPerSideGreen,
                    int pointsPerSideRed, int pointsPerSideLoss, int pointsPerBrown, int pointsPerGray,
-                   int pointsPerPurple, int pointsPerWonderStage, int chooseGreen) {
+                   int pointsPerPurple, int pointsPerWonderStage, int chooseGreen, int coinCost, int lumberCost,
+                   int oreCost, int clayCost, int stoneCost, int textileCost, int glassCost, int papyrusCost) {
         this.id = id;
         this.age = age;
         this.name = name;
@@ -41,5 +51,14 @@ public class PurpleCardInfo {
         this.pointsPerPurple = pointsPerPurple;
         this.pointsPerWonderStage = pointsPerWonderStage;
         this.chooseGreen = chooseGreen;
+
+        this.coinCost = coinCost;
+        this.lumberCost = lumberCost;
+        this.oreCost = oreCost;
+        this.clayCost = clayCost;
+        this.stoneCost = stoneCost;
+        this.textileCost = textileCost;
+        this.glassCost = glassCost;
+        this.papyrusCost = papyrusCost;
     }
 }
