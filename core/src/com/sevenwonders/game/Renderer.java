@@ -15,21 +15,24 @@ public class Renderer {
     private BitmapFont font;
 
     Texture img;
+    Texture topBarBackground;
     Sprite img2;
 
     Renderer(SpriteBatch batch) {
 
         this.batch = batch;
         img = new Texture(Gdx.files.internal("kneeboi2.png"));
-        img2 = new Sprite(img);
-        img2.setSize(Settings.RESOLUTION.x, Settings.RESOLUTION.y);
+        topBarBackground = new Texture(Gdx.files.internal("TopBarBackground.png"));
+        img2 = new Sprite(topBarBackground);
+        img2.setPosition(0, 880);
+        //img2.setSize(Settings.RESOLUTION.x, Settings.RESOLUTION.y);
     }
 
     public void draw() {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        //img2.draw(batch);
+        img2.draw(batch);
         batch.end();
 
     }
