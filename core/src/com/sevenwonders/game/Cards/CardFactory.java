@@ -1,4 +1,4 @@
-package com.sevenwonders.game;
+package com.sevenwonders.game.Cards;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.JsonReader;

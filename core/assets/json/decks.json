@@ -1,0 +1,132 @@
+{
+  "3 player": [
+    "age 1": {
+	  "brownCards": [0,1,2,3,4,5],
+	  "grayCards": [0,1,2],
+	  "yellowCards": [0,1,2,3],
+	  "blueCards": [0,1,2],
+	  "redCards": [0,1,2],
+	  "greenCards": [0,1,2]
+	},
+	"age 2": {
+	  "brownCards": [10,11,12,13],
+	  "grayCards": [3,4,5],
+	  "yellowCards": [4,5],
+	  "blueCards": [4,5,6,7],
+	  "redCards": [3,4,5],
+	  "greenCards": [3,4,5,6]
+	},
+	"age 3": {
+	  "brownCards": [],
+	  "grayCards": [],
+	  "yellowCards": [8,9,10],
+	  "blueCards": [8,9,10,11,12],
+	  "redCards": [7,8,9],
+	  "greenCards": [7,8,9,10,11]
+	}
+  ],
+  "4 player": [
+    "age 1": {
+	  "brownCards": [0,0,1,1,2,3,4,5,6],
+	  "grayCards": [0,1,2],
+	  "yellowCards": [0,1,2,3],
+	  "blueCards": [0,1,2,3],
+	  "redCards": [0,1,2,2],
+	  "greenCards": [0,1,2,2]
+	},
+	"age 2": {
+	  "brownCards": [10,10,11,11,12,12,13,13],
+	  "grayCards": [3,4,5],
+	  "yellowCards": [4,5,6,7],
+	  "blueCards": [4,5,6,7],
+	  "redCards": [3,4,5,6],
+	  "greenCards": [3,4,5,5,6]
+	},
+	"age 3": {
+	  "brownCards": [],
+	  "grayCards": [],
+	  "yellowCards": [8,9,10,10,11],
+	  "blueCards": [8,8,9,10,11,12],
+	  "redCards": [7,8,9,9,10],
+	  "greenCards": [7,7,8,9,10,11]
+	}
+  ],
+  "5 player": [
+    "age 1": {
+	  "brownCards": [0,0,1,1,2,2,3,3,4,5,6,7],
+	  "grayCards": [0,1,2],
+	  "yellowCards": [0,1,2,3,3],
+	  "blueCards": [0,0,1,2,3],
+	  "redCards": [0,1,1,2,2],
+	  "greenCards": [0,0,1,2,2]
+	},
+	"age 2": {
+	  "brownCards": [10,10,11,11,12,12,13,13],
+	  "grayCards": [3,3,4,4,5,5],
+	  "yellowCards": [4,4,5,6,7],
+	  "blueCards": [4,5,5,6,7],
+	  "redCards": [3,3,4,5,6],
+	  "greenCards": [3,4,4,5,5,6]
+	},
+	"age 3": {
+	  "brownCards": [],
+	  "grayCards": [],
+	  "yellowCards": [8,8,9,10,10,11],
+	  "blueCards": [8,8,9,9,10,10,11,12],
+	  "redCards": [7,7,8,9,9,10,10],
+	  "greenCards": [7,7,8,9,10,10,11]
+	}
+  ],
+  "6 player": [
+    "age 1": {
+	  "brownCards": [0,0,1,1,2,2,3,3,4,5,6,7,8,9],
+	  "grayCards": [0,0,1,1,2,2],
+	  "yellowCards": [0,1,2,2,3,3],
+	  "blueCards": [0,0,1,1,2,3],
+	  "redCards": [0,1,1,2,2],
+	  "greenCards": [0,0,1,2,2]
+	},
+	"age 2": {
+	  "brownCards": [10,10,11,11,12,12,13,13],
+	  "grayCards": [3,3,4,4,5,5],
+	  "yellowCards": [4,4,4,5,5,6,6,7],
+	  "blueCards": [4,4,5,5,6,7],
+	  "redCards": [3,3,4,4,5,6,6],
+	  "greenCards": [3,3,4,4,5,5,6]
+	},
+	"age 3": {
+	  "brownCards": [],
+	  "grayCards": [],
+	  "yellowCards": [8,8,9,9,10,10,11,11],
+	  "blueCards": [8,8,9,9,10,10,10,11,11,12],
+	  "redCards": [7,7,8,9,9,10,10,10],
+	  "greenCards": [7,7,8,9,9,10,10,11]
+	}
+  ],
+  "7 player": [
+    "age 1": {
+	  "brownCards": [0,0,1,1,2,2,3,3,4,5,6,7,8,9],
+	  "grayCards": [0,0,1,1,2,2],
+	  "yellowCards": [0,0,1,1,2,2,3,3,3],
+	  "blueCards": [0,0,1,1,2,2,3,3],
+	  "redCards": [0,0,1,1,2,2],
+	  "greenCards": [0,0,1,1,2,2]
+	},
+	"age 2": {
+	  "brownCards": [10,10,11,11,12,12,13,13],
+	  "grayCards": [3,3,4,4,5,5],
+	  "yellowCards": [4,4,4,5,5,5,6,6,7,7],
+	  "blueCards": [4,4,5,5,6,6,7,7],
+	  "redCards": [3,3,4,4,5,5,6,6,6],
+	  "greenCards": [3,3,4,4,5,5,6,6]
+	},
+	"age 3": {
+	  "brownCards": [],
+	  "grayCards": [],
+	  "yellowCards": [8,8,8,9,9,10,10,11,11],
+	  "blueCards": [8,8,9,9,10,10,10,11,11,12,12],
+	  "redCards": [7,7,8,8,9,9,9,10,10,10],
+	  "greenCards": [7,7,8,8,9,9,10,10,11,11]
+	}
+  ]
+}

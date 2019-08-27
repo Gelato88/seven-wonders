@@ -1,4 +1,4 @@
-package com.sevenwonders.game;
+package com.sevenwonders.game.Cards;
 
 public class RedCardInfo extends CardInfo {
 
