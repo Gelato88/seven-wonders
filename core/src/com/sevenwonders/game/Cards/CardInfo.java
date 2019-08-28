@@ -2,6 +2,8 @@ package com.sevenwonders.game.Cards;
 
 public class CardInfo {
 
+    protected String name;
+    protected String texture;
     protected int coinCost;
     protected int lumberCost;
     protected int oreCost;
@@ -11,8 +13,10 @@ public class CardInfo {
     protected int glassCost;
     protected int papyrusCost;
 
-    CardInfo(int coinCost, int lumberCost, int oreCost, int clayCost, int stoneCost, int textileCost, int glassCost,
+    CardInfo(String name, String texture, int coinCost, int lumberCost, int oreCost, int clayCost, int stoneCost, int textileCost, int glassCost,
              int papyrusCost) {
+        this.name = name;
+        this.texture = texture;
         this.coinCost = coinCost;
         this.lumberCost = lumberCost;
         this.oreCost = oreCost;

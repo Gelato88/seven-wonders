@@ -7,4 +7,9 @@ public class Card {
     Card(CardInfo info) {
         this.info = info;
     }
+
+    public void printCardName() {
+        System.out.println(info.name);
+    }
+
 }

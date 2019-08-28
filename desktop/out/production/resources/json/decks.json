@@ -3,7 +3,7 @@
     "age 1": {
 	  "brownCards": [0,1,2,3,4,5],
 	  "grayCards": [0,1,2],
-	  "yellowCards": [0,1,2,3],
+	  "yellowCards": [0,1,2],
 	  "blueCards": [0,1,2],
 	  "redCards": [0,1,2],
 	  "greenCards": [0,1,2]
@@ -11,7 +11,7 @@
 	"age 2": {
 	  "brownCards": [10,11,12,13],
 	  "grayCards": [3,4,5],
-	  "yellowCards": [4,5],
+	  "yellowCards": [4,5,6],
 	  "blueCards": [4,5,6,7],
 	  "redCards": [3,4,5],
 	  "greenCards": [3,4,5,6]

@@ -12,17 +12,20 @@ import java.util.ArrayList;
 public class DeckManager {
 
     CardFactory factory;
+    SevenWonders game;
     ArrayList<Card> age1Deck;
     ArrayList<Card> age2Deck;
     ArrayList<Card> age3Deck;
 
-    public DeckManager(String path, CardFactory factory) {
+    public DeckManager(String path, CardFactory factory, SevenWonders game) {
         age1Deck = new ArrayList<Card>();
         age2Deck = new ArrayList<Card>();
         age3Deck = new ArrayList<Card>();
         this.factory = factory;
+        this.game = game;
         resetDecks(path);
-        Gdx.app.log("DeckManage", "Decks loaded for " + Settings.players + " players.");
+        Gdx.app.log("DeckManager", "Decks loaded for " + Settings.players + " players.");
+        System.out.println();
     }
 
     private void fillDeck(JsonValue age, ArrayList<Card> deck) {
@@ -40,6 +43,9 @@ public class DeckManager {
         }
         for(int id : age.get("redCards").asIntArray()) {
             deck.add(factory.createRedCard(id));
+        }
+        for(int id : age.get("greenCards").asIntArray()) {
+            deck.add(factory.createGreenCard(id));
         }
     }
 
@@ -69,6 +75,34 @@ public class DeckManager {
         for(int i = 0; i < deck.size(); i++) {
             int rand = (int)(Math.random() * (deck.size() - i));
             deck.add(deck.remove(rand));
+        }
+    }
+
+    public void deal(int age) {
+        switch(age) {
+            case 1:
+                dealAge(age1Deck);
+                break;
+            case 2:
+                dealAge(age2Deck);
+                break;
+            case 3:
+                dealAge(age3Deck);
+                break;
+            default:
+                Gdx.app.log("DeckManager","Invalid age found.");
+        }
+    }
+
+    private void dealAge(ArrayList<Card> deck) {
+        System.out.println(deck.size());
+        int playerCounter = 0;
+        for(Card c : deck) {
+            game.players.get(playerCounter).addToHand(c);
+            playerCounter++;
+            if(playerCounter >= game.players.size()) {
+                playerCounter = 0;
+            }
         }
     }
 
