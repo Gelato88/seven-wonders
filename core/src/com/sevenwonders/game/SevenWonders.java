@@ -13,11 +13,12 @@ public class SevenWonders extends ApplicationAdapter {
 	private Renderer renderer;
 
 	public ArrayList<Player> players;
+	public Player currentPlayer;
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		renderer = new Renderer(batch);
+		renderer = new Renderer(batch, this);
 		players = new ArrayList<Player>();
 		CardFactory cardFactory = new CardFactory("json/cards.json");
 		DeckManager deckManager = new DeckManager("json/decks.json", cardFactory, this);
@@ -28,6 +29,7 @@ public class SevenWonders extends ApplicationAdapter {
         System.out.println();
 
         deckManager.deal(1);
+        currentPlayer = players.get(0);
 
 		for(Player p : players) {
 		    p.printHand();

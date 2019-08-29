@@ -11,8 +11,8 @@ public class BrownCardInfo extends CardInfo {
 
     BrownCardInfo(int id, int age, String name, String texture, int lumber, int ore, int clay, int stone, int coinCost,
                   int lumberCost, int oreCost, int clayCost, int stoneCost, int textileCost, int glassCost,
-                  int papyrusCost) {
-        super(name, texture, coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost);
+                  int papyrusCost, String freeCard) {
+        super(name, texture, coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost, freeCard);
         this.id = id;
         this.age = age;
         this.lumber = lumber;

@@ -7,10 +7,14 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.sevenwonders.game.Cards.Card;
+
+import java.util.ArrayList;
 
 public class Renderer {
 
     private SpriteBatch batch;
+    private SevenWonders game;
     private GlyphLayout layout;
     private BitmapFont font;
 
@@ -18,12 +22,26 @@ public class Renderer {
     Texture topBarBackground;
     Sprite img2;
 
-    Renderer(SpriteBatch batch) {
-
+    Renderer(SpriteBatch batch, SevenWonders game) {
         this.batch = batch;
+        this.game = game;
         topBarBackground = new Texture(Gdx.files.internal("textures/TopBarBackground.png"));
         img2 = new Sprite(topBarBackground);
         img2.setPosition(0, 880);
+    }
+
+    private void drawCurrentPlayerHand() {
+        float xIncrement = 200f;
+        ArrayList<Card> hand = game.currentPlayer.hand;
+        float xPos = (Settings.RESOLUTION.x/2) - ((hand.size()/2f) * xIncrement - 20f);
+        batch.begin();
+        for(Card c : hand) {
+            Sprite s = c.getSprite();
+            s.setPosition(xPos, 30f);
+            s.draw(batch);
+            xPos += xIncrement;
+        }
+        batch.end();
     }
 
     public void draw() {
@@ -32,7 +50,7 @@ public class Renderer {
         batch.begin();
         img2.draw(batch);
         batch.end();
-
+        drawCurrentPlayerHand();
     }
 
 }

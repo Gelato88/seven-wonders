@@ -26,8 +26,8 @@ public class YellowCardInfo extends CardInfo {
                    int coinsPerBrown, int coinsPerSideGray, int coinsPerGray, int coinsPerWonderStage,
                    int coinsPerYellow, int pointsPerWonderStage, int pointsPerYellow, int pointsPerBrown,
                    int pointsPerGray, int coinCost, int lumberCost, int oreCost, int clayCost, int stoneCost,
-                   int textileCost, int glassCost, int papyrusCost) {
-        super(name, texture, coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost,papyrusCost);
+                   int textileCost, int glassCost, int papyrusCost, String freeCard) {
+        super(name, texture, coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost,papyrusCost, freeCard);
         this.id = id;
         this.age = age;
         this.leftBrownDiscount = leftBrownDiscount;

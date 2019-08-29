@@ -22,8 +22,8 @@ public class PurpleCardInfo extends CardInfo {
                    int pointsPerSideYellow, int pointsPerSideBlue, int pointsPerSideWonderStage, int pointsPerSideGreen,
                    int pointsPerSideRed, int pointsPerSideLoss, int pointsPerBrown, int pointsPerGray,
                    int pointsPerPurple, int pointsPerWonderStage, int chooseGreen, int coinCost, int lumberCost,
-                   int oreCost, int clayCost, int stoneCost, int textileCost, int glassCost, int papyrusCost) {
-        super(name, texture, coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost);
+                   int oreCost, int clayCost, int stoneCost, int textileCost, int glassCost, int papyrusCost, String freeCard) {
+        super(name, texture, coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost, freeCard);
         this.id = id;
         this.age = age;
         this.pointsPerSideBrown = pointsPerSideBrown;

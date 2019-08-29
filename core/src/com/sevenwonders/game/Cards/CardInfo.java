@@ -1,5 +1,9 @@
 package com.sevenwonders.game.Cards;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+
 public class CardInfo {
 
     protected String name;
@@ -12,9 +16,12 @@ public class CardInfo {
     protected int textileCost;
     protected int glassCost;
     protected int papyrusCost;
+    protected String freeCard;
+
+    protected Sprite sprite;
 
     CardInfo(String name, String texture, int coinCost, int lumberCost, int oreCost, int clayCost, int stoneCost, int textileCost, int glassCost,
-             int papyrusCost) {
+             int papyrusCost, String freeCard) {
         this.name = name;
         this.texture = texture;
         this.coinCost = coinCost;
@@ -25,5 +32,8 @@ public class CardInfo {
         this.textileCost = textileCost;
         this.glassCost = glassCost;
         this.papyrusCost = papyrusCost;
+        this.freeCard = freeCard;
+
+        sprite = new Sprite(new Texture(Gdx.files.internal("textures/" + texture)));
     }
 }

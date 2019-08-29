@@ -56,9 +56,10 @@ public class CardFactory {
             int textileCost = card.getInt("textileCost");
             int glassCost = card.getInt("glassCost");
             int papyrusCost = card.getInt("papyrusCost");
+            String freeCard = card.getString("freeCard");
 
             BrownCardInfo info = new BrownCardInfo(id, age, name, texture, lumber, ore, clay, stone, coinCost,
-                    lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost);
+                    lumberCost, oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost, freeCard);
             brownCards.put(id, info);
         }
         Gdx.app.log("CardFactory", "Completed loading brown cards.");
@@ -83,9 +84,10 @@ public class CardFactory {
             int textileCost = card.getInt("textileCost");
             int glassCost = card.getInt("glassCost");
             int papyrusCost = card.getInt("papyrusCost");
+            String freeCard = card.getString("freeCard");
 
             GrayCardInfo info = new GrayCardInfo(id, age, name, texture, textile, glass, papyrus, coinCost, lumberCost,
-                    oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost);
+                    oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost, freeCard);
             grayCards.put(id, info);
         }
         Gdx.app.log("CardFactory", "Completed loading gray cards.");
@@ -123,12 +125,13 @@ public class CardFactory {
             int textileCost = card.getInt("textileCost");
             int glassCost = card.getInt("glassCost");
             int papyrusCost = card.getInt("papyrusCost");
+            String freeCard = card.getString("freeCard");
 
             YellowCardInfo info = new YellowCardInfo(id, age, name, texture, leftBrownDiscount, rightBrownDiscount,
                     grayDiscount, coins, chooseBrown, chooseGray, coinsPerSideBrown, coinsPerBrown, coinsPerSideGray,
                     coinsPerGray, coinsPerWonderStage, coinsPerYellow, pointsPerWonderStage, pointsPerYellow,
                     pointsPerBrown, pointsPerGray, coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost,
-                    glassCost, papyrusCost);
+                    glassCost, papyrusCost, freeCard);
             yellowCards.put(id, info);
         }
         Gdx.app.log("CardFactory", "Completed loading yellow cards.");
@@ -151,9 +154,10 @@ public class CardFactory {
             int textileCost = card.getInt("textileCost");
             int glassCost = card.getInt("glassCost");
             int papyrusCost = card.getInt("papyrusCost");
+            String freeCard = card.getString("freeCard");
 
             BlueCardInfo info = new BlueCardInfo(id, age, name, texture, points, coinCost, lumberCost, oreCost,
-                    clayCost, stoneCost, textileCost, glassCost, papyrusCost);
+                    clayCost, stoneCost, textileCost, glassCost, papyrusCost, freeCard);
             blueCards.put(id, info);
         }
         Gdx.app.log("CardFactory","Completed loading blue cards.");
@@ -176,9 +180,10 @@ public class CardFactory {
             int textileCost = card.getInt("textileCost");
             int glassCost = card.getInt("glassCost");
             int papyrusCost = card.getInt("papyrusCost");
+            String freeCard = card.getString("freeCard");
 
             RedCardInfo info = new RedCardInfo(id, age, name, texture, military, coinCost, lumberCost, oreCost,
-                    clayCost, stoneCost, textileCost, glassCost, papyrusCost);
+                    clayCost, stoneCost, textileCost, glassCost, papyrusCost, freeCard);
             redCards.put(id, info);
         }
         Gdx.app.log("CardFactory", "Completed loading red cards.");
@@ -203,9 +208,10 @@ public class CardFactory {
             int textileCost = card.getInt("textileCost");
             int glassCost = card.getInt("glassCost");
             int papyrusCost = card.getInt("papyrusCost");
+            String freeCard = card.getString("freeCard");
 
             GreenCardInfo info = new GreenCardInfo(id, age, name, texture, compass, gear, tablet, coinCost, lumberCost,
-                    oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost);
+                    oreCost, clayCost, stoneCost, textileCost, glassCost, papyrusCost, freeCard);
             greenCards.put(id, info);
         }
         Gdx.app.log("CardFactory", "Completed loading green cards.");
@@ -240,12 +246,13 @@ public class CardFactory {
             int textileCost = card.getInt("textileCost");
             int glassCost = card.getInt("glassCost");
             int papyrusCost = card.getInt("papyrusCost");
+            String freeCard = card.getString("freeCard");
 
             PurpleCardInfo info =  new PurpleCardInfo(id, age, name, texture, pointsPerSideBrown, pointsPerSideGray,
                     pointsPerSideYellow, pointsPerSideBlue, pointsPerSideWonderStage, pointsPerSideGreen,
                     pointsPerSideRed, pointsPerSideLoss, pointsPerBrown, pointsPerGray, pointsPerPurple,
                     pointsPerWonderStage, chooseGreen, coinCost, lumberCost, oreCost, clayCost, stoneCost, textileCost,
-                    glassCost, papyrusCost);
+                    glassCost, papyrusCost, freeCard);
             purpleCards.put(id, info);
         }
         Gdx.app.log("CardFactory", "Completed loading purple cards.");
