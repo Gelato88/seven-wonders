@@ -4,6 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import com.sevenwonders.game.Cards.CardFactory;
+import com.sevenwonders.game.Cards.InputHandler;
 
 import java.util.ArrayList;
 
@@ -11,17 +12,22 @@ public class SevenWonders extends ApplicationAdapter {
 
 	private SpriteBatch batch;
 	private Renderer renderer;
+	private CardFactory cardFactory;
+	private DeckManager deckManager;
+	private InputHandler inputHandler;
 
 	public ArrayList<Player> players;
 	public Player currentPlayer;
+	public Player showingPlayer;
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		renderer = new Renderer(batch, this);
 		players = new ArrayList<Player>();
-		CardFactory cardFactory = new CardFactory("json/cards.json");
-		DeckManager deckManager = new DeckManager("json/decks.json", cardFactory, this);
+		cardFactory = new CardFactory("json/cards.json");
+		deckManager = new DeckManager("json/decks.json", cardFactory, this);
+        inputHandler = new InputHandler(this);
 
 		for(int i = 0; i < Settings.players; i++) {
 		    players.add(new Player());
@@ -31,6 +37,7 @@ public class SevenWonders extends ApplicationAdapter {
 
         deckManager.deal(1);
         currentPlayer = players.get(0);
+        showingPlayer = players.get(0);
 
 		for(Player p : players) {
 		    p.printHand();
@@ -39,6 +46,7 @@ public class SevenWonders extends ApplicationAdapter {
 
 	@Override
 	public void render () {
+	    inputHandler.update();
 		renderer.draw();
 	}
 	
