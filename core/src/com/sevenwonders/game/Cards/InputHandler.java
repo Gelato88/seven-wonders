@@ -1,6 +1,7 @@
 package com.sevenwonders.game.Cards;
 
 import com.badlogic.gdx.Gdx;
+import com.sevenwonders.game.Settings;
 import com.sevenwonders.game.SevenWonders;
 
 
@@ -14,9 +15,9 @@ public class InputHandler {
 
     public void update() {
 
-        float mouseX = Gdx.input.getX();
-        float mouseY = Gdx.graphics.getHeight() - Gdx.input.getY();
-
+        float mouseX = (Gdx.input.getX()) * (Settings.RESOLUTION.x / Gdx.graphics.getWidth());
+        float mouseY = (Gdx.graphics.getHeight() - Gdx.input.getY()) * (Settings.RESOLUTION.y / Gdx.graphics.getHeight());
+        
         for(Card c : game.showingPlayer.hand) {
             if(cardHover(c, mouseX, mouseY)) {
                 c.getSprite().setScale(1.1f);
