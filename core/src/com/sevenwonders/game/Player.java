@@ -85,6 +85,10 @@ public class Player {
         Gdx.app.log("Player", "Loaded player " + playersLoaded + ".");
     }
 
+    public boolean canAfford(Card card) {
+        return card.canAfford(this);
+    }
+
     public void addToHand(Card card) {
         hand.add(card);
     }
