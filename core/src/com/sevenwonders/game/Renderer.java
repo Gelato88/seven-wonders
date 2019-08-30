@@ -36,12 +36,25 @@ public class Renderer {
         float xPos = (Settings.RESOLUTION.x/2) - ((hand.size()/2f) * xIncrement - 20f);
         batch.begin();
         for(Card c : hand) {
-            Sprite s = c.getSprite();
-            s.setPosition(xPos, 30f);
-            s.draw(batch);
+            if(!c.equals(game.currentPlayer.selectedCard)) {
+                Sprite s = c.getSprite();
+                s.setPosition(xPos, 30f);
+                s.draw(batch);
+            }
             xPos += xIncrement;
         }
         batch.end();
+    }
+
+    private void drawSelectedCard() {
+        if(game.currentPlayer.cardSelected) {
+            batch.begin();
+            Sprite s = game.currentPlayer.selectedCard.getSprite();
+            s.setPosition(Settings.RESOLUTION.x / 2 - s.getWidth() / 2, 400f);
+            s.setScale(1.5f);
+            s.draw(batch);
+            batch.end();
+        }
     }
 
     public void draw() {
@@ -51,6 +64,7 @@ public class Renderer {
         img2.draw(batch);
         batch.end();
         drawCurrentPlayerHand();
+        drawSelectedCard();
     }
 
 }

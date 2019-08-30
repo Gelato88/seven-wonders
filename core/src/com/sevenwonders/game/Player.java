@@ -46,6 +46,8 @@ public class Player {
     public ArrayList<Card> played;
     public Player leftNeighbor;
     public Player rightNeighbor;
+    public Card selectedCard;
+    public boolean cardSelected;
 
     public Player() {
         coins = 3;
@@ -82,6 +84,7 @@ public class Player {
 
         hand = new ArrayList<Card>();
         played = new ArrayList<Card>();
+        cardSelected = false;
 
         playerNumber = ++playersLoaded;
         Gdx.app.log("Player", "Loaded player " + playersLoaded + ".");
@@ -97,6 +100,16 @@ public class Player {
 
     public void setRightNeighbor(Player p) {
         rightNeighbor = p;
+    }
+
+    public void selectCard(Card c) {
+        selectedCard = c;
+        cardSelected = true;
+    }
+
+    public void deselectCard() {
+        selectedCard = null;
+        cardSelected = false;
     }
 
     public void addToHand(Card card) {

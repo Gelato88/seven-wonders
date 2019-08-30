@@ -17,12 +17,23 @@ public class InputHandler {
 
         float mouseX = (Gdx.input.getX()) * (Settings.RESOLUTION.x / Gdx.graphics.getWidth());
         float mouseY = (Gdx.graphics.getHeight() - Gdx.input.getY()) * (Settings.RESOLUTION.y / Gdx.graphics.getHeight());
-        
-        for(Card c : game.showingPlayer.hand) {
-            if(cardHover(c, mouseX, mouseY)) {
-                c.getSprite().setScale(1.1f);
-            } else {
-                c.getSprite().setScale(1f);
+
+        if(!game.currentPlayer.cardSelected) {
+            for (Card c : game.currentPlayer.hand) {
+                if (cardHover(c, mouseX, mouseY)) {
+                    c.getSprite().setScale(1.1f);
+                    if (Gdx.input.isTouched()) {
+                        game.currentPlayer.selectCard(c);
+                    }
+                } else {
+                    c.getSprite().setScale(1f);
+                }
+            }
+        } else {
+            if(cardHover(game.currentPlayer.selectedCard, mouseX, mouseY)) {
+                if(Gdx.input.isTouched()) {
+                    game.currentPlayer.deselectCard();
+                }
             }
         }
     }

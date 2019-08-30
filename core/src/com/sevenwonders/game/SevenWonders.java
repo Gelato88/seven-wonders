@@ -18,7 +18,6 @@ public class SevenWonders extends ApplicationAdapter {
 
 	public ArrayList<Player> players;
 	public Player currentPlayer;
-	public Player showingPlayer;
 
 	@Override
 	public void create () {
@@ -37,7 +36,6 @@ public class SevenWonders extends ApplicationAdapter {
 
         deckManager.deal(1);
         currentPlayer = players.get(0);
-        showingPlayer = players.get(0);
 
 		for(Player p : players) {
 		    p.printHand();
