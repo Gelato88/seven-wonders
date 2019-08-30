@@ -27,6 +27,7 @@ public class SevenWonders extends ApplicationAdapter {
 		    players.add(new Player());
         }
         System.out.println();
+		setNeighbors();
 
         deckManager.deal(1);
         currentPlayer = players.get(0);
@@ -45,4 +46,16 @@ public class SevenWonders extends ApplicationAdapter {
 	public void dispose () {
 		batch.dispose();
 	}
+
+	public void setNeighbors() {
+		for(int i = 0; i < players.size() - 1; i++) {
+			players.get(i).setRightNeighbor(players.get(i+1));
+		}
+		players.get(players.size()-1).setRightNeighbor(players.get(0));
+		for(int i = 1; i < players.size(); i++) {
+			players.get(i).setLeftNeighbor(players.get(i-1));
+		}
+		players.get(0).setLeftNeighbor(players.get(players.size()-1));
+	}
+
 }
