@@ -35,7 +35,10 @@ public class Player {
     public int pointsPerSideYellow;
     public int pointsPerSideBlue;
     public int pointsPerSideLoss;
-    public int military;
+    public int militaryShields;
+    public int militaryWinsOne;
+    public int militaryWinsThree;
+    public int militaryWinsFive;
     public int militaryLosses;
     public int compass;
     public int gear;
@@ -75,7 +78,10 @@ public class Player {
         pointsPerSideYellow = 0;
         pointsPerSideBlue = 0;
         pointsPerSideLoss = 0;
-        military = 0;
+        militaryShields = 0;
+        militaryWinsOne = 0;
+        militaryWinsThree = 0;
+        militaryWinsFive = 0;
         militaryLosses = 0;
         compass = 0;
         gear = 0;
