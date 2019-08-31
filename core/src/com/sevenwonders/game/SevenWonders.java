@@ -14,6 +14,7 @@ public class SevenWonders extends ApplicationAdapter {
 	private Renderer renderer;
 	private CardFactory cardFactory;
 	private DeckManager deckManager;
+	private MilitaryManager militaryManager;
 	private InputHandler inputHandler;
 
 	public ArrayList<Player> players;
@@ -26,6 +27,7 @@ public class SevenWonders extends ApplicationAdapter {
 		players = new ArrayList<Player>();
 		cardFactory = new CardFactory("json/cards.json");
 		deckManager = new DeckManager("json/decks.json", cardFactory, this);
+		militaryManager = new MilitaryManager(players);
         inputHandler = new InputHandler(this);
 
 		for(int i = 0; i < Settings.players; i++) {
@@ -40,6 +42,12 @@ public class SevenWonders extends ApplicationAdapter {
 		for(Player p : players) {
 		    p.printHand();
         }
+
+		//Testing military
+		players.get(0).militaryShields++;
+		players.get(0).militaryShields++;
+		players.get(1).militaryShields++;
+		militaryManager.militaryAttack();
 	}
 
 	@Override
