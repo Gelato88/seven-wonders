@@ -36,3 +36,7 @@ task dist(type: Jar) {
 
 
 dist.dependsOn classes
+
+dependencies {
+	compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+}
