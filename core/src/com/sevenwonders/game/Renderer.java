@@ -23,28 +23,30 @@ public class Renderer {
     private BitmapFont grayFont;
     private BitmapFont yellowFont;
 
-    Texture img;
     Texture topBarBackground;
-    Sprite img2;
+    Sprite topBarBackgroundSprite;
 
     Renderer(SpriteBatch batch, SevenWonders game) {
         this.batch = batch;
         this.game = game;
         layout = new GlyphLayout();
         topBarBackground = new Texture(Gdx.files.internal("textures/TopBarBackground.png"));
-        img2 = new Sprite(topBarBackground);
-        img2.setPosition(0, 880);
+        topBarBackgroundSprite = new Sprite(topBarBackground);
+        topBarBackgroundSprite.setPosition(0, 880);
         loadFonts();
+
+
+
     }
 
     private void loadFonts() {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/LuckiestGuy-Regular.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
         parameter.size = 48;
-        parameter.color = new Color(184/255f, 77/255f, 28/255f, 1f);
         parameter.shadowColor = Color.BLACK;
         parameter.shadowOffsetX = 3;
         parameter.shadowOffsetY = 1;
+        parameter.color = new Color(97/255f, 41/255f, 17/255f, 1f);
         brownFont = generator.generateFont(parameter);
         parameter.color = new Color(160/255f, 180/255f, 184/255f, 1f);
         grayFont = generator.generateFont(parameter);
@@ -73,26 +75,28 @@ public class Renderer {
 
     private void drawCurrentPlayerResources() {
         Player p = game.currentPlayer;
-        float increment = 60f;
+        float yStart = 1020f;
+        float increment = 75f;
 
         batch.begin();
-        writeResourceLine("" + p.coins, whiteFont, yellowFont, 80f, 1000f);
-        writeResourceLine("" + p.lumber, whiteFont, brownFont, 80f, 1000f - increment * 1);
-        writeResourceLine("" + p.ore, whiteFont, brownFont, 80f, 1000f - increment * 2);
-        writeResourceLine("" + p.clay, whiteFont, brownFont, 80f, 1000f - increment * 3);
-        writeResourceLine("" + p.stone, whiteFont, brownFont, 80f, 1000f - increment * 4);
-        writeResourceLine("" + p.textile, whiteFont, grayFont, 80f, 1000f - increment * 5);
-        writeResourceLine("" + p.glass, whiteFont, grayFont, 80f, 1000f - increment * 6);
-        writeResourceLine("" + p.papyrus, whiteFont, grayFont, 80f, 1000f - increment * 7);
+        drawResourceLine(Assets.coins,"" + p.coins, whiteFont, yellowFont,  yStart);
+        drawResourceLine(Assets.stones,"" + p.lumber, whiteFont, brownFont, yStart - increment * 1);
+        drawResourceLine(Assets.stones,"" + p.ore, whiteFont, brownFont,  yStart - increment * 2);
+        drawResourceLine(Assets.bricks,"" + p.clay, whiteFont, brownFont,  yStart - increment * 3);
+        drawResourceLine(Assets.stones,"" + p.stone, whiteFont, brownFont,  yStart - increment * 4);
+        drawResourceLine(Assets.stones,"" + p.textile, whiteFont, grayFont, yStart - increment * 5);
+        drawResourceLine(Assets.stones,"" + p.glass, whiteFont, grayFont,  yStart - increment * 6);
+        drawResourceLine(Assets.stones,"" + p.papyrus, whiteFont, grayFont, yStart - increment * 7);
         batch.end();
     }
 
-    private void writeResourceLine(String text, BitmapFont whiteFont, BitmapFont font, float x, float y) {
+    private void drawResourceLine(Sprite sprite, String text, BitmapFont whiteFont, BitmapFont font, float y) {
+        sprite.setPosition(20f, y - sprite.getHeight());
+        sprite.draw(batch);
         layout.setText(whiteFont, " - ");
-        float incrememnt = layout.width;
-        whiteFont.draw(batch, layout, x, y);
+        whiteFont.draw(batch, layout, 90f, y - layout.height/2);
         layout.setText(font, text);
-        font.draw(batch, layout, x + incrememnt, y);
+        font.draw(batch, layout, 130f, y - layout.height/2);
     }
 
     private void drawSelectedCard() {
@@ -106,11 +110,15 @@ public class Renderer {
         }
     }
 
+    private void drawBackground() {
+        Assets.resourceBacking.draw(batch);
+    }
+
     public void draw() {
-        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClearColor(255, 255, 255, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        img2.draw(batch);
+        drawBackground();
         batch.end();
         drawCurrentPlayerHand();
         drawSelectedCard();

@@ -30,6 +30,8 @@ public class SevenWonders extends ApplicationAdapter {
 		militaryManager = new MilitaryManager(players);
         inputHandler = new InputHandler(this);
 
+        Assets.load();
+
 		for(int i = 0; i < Settings.players; i++) {
 		    players.add(new Player());
         }
