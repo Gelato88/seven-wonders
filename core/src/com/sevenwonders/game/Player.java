@@ -133,8 +133,28 @@ public class Player {
     public int calculatePoints() {
 
         int score = 0;
+        score = score + calculateSciencePoints();
 
         return score;
+    }
+
+    public int calculateSciencePoints() {
+        int totalScienceScore = 0;
+        //First square each type
+        totalScienceScore = totalScienceScore + (int)Math.pow(compass, 2);
+        totalScienceScore = totalScienceScore + (int)Math.pow(gear, 2);
+        totalScienceScore = totalScienceScore + (int)Math.pow(tablet, 2);
+
+        //Give 7 points per set of 3
+        if (tablet <= gear && tablet <= compass) {
+            totalScienceScore = totalScienceScore + (tablet * 7);
+        } else if (gear <= tablet && gear <= compass) {
+            totalScienceScore = totalScienceScore + (gear * 7);
+        } else if (compass <= tablet && compass <= gear) {
+            totalScienceScore = totalScienceScore + (compass * 7);
+        }
+
+        return totalScienceScore;
     }
 
 }

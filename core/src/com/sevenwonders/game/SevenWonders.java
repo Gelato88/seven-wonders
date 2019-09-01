@@ -46,10 +46,8 @@ public class SevenWonders extends ApplicationAdapter {
         }
 
 		//Testing military
-		players.get(0).militaryShields++;
-		players.get(0).militaryShields++;
-		players.get(1).militaryShields++;
-		militaryManager.militaryAttack();
+		//Currently off since we don't need this yet
+		//militaryManager.militaryAttack();
 	}
 
 	@Override
