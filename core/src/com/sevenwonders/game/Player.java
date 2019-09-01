@@ -53,7 +53,7 @@ public class Player {
     public boolean cardSelected;
 
     public Player() {
-        coins = 3;
+        coins = Settings.startingGold;
         lumber = 0;
         ore = 0;
         clay = 0;
