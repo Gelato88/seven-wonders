@@ -22,6 +22,7 @@ public class SevenWonders extends ApplicationAdapter {
 
 	public ArrayList<Player> players;
 	public Player currentPlayer;
+	public int age;
 
 	@Override
 	public void create () {
@@ -33,6 +34,8 @@ public class SevenWonders extends ApplicationAdapter {
 		militaryManager = new MilitaryManager(players);
         inputHandler = new InputHandler(this);
 
+
+        age = 1;
         Assets.load();
 
 		for(int i = 0; i < Settings.players; i++) {
@@ -41,7 +44,7 @@ public class SevenWonders extends ApplicationAdapter {
         System.out.println();
 		setNeighbors();
 
-        deckManager.deal(1);
+        deckManager.deal(age);
         currentPlayer = players.get(0);
 
 		//Testing military
@@ -52,8 +55,8 @@ public class SevenWonders extends ApplicationAdapter {
 	@Override
 	public void render () {
 	    inputHandler.update();
-		if(Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
-			players = passHandToRightNeighbor();
+		if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
+		    passHands(age);
 		}
 		renderer.draw();
 	}
@@ -74,17 +77,19 @@ public class SevenWonders extends ApplicationAdapter {
 		players.get(0).setLeftNeighbor(players.get(players.size()-1));
 	}
 
-	private ArrayList<Player> passHandToRightNeighbor(){
-		ArrayList<Player> tempPlayerList;
-		tempPlayerList = players;
-		//Pass all the cards except for the first player, who will loop around after
-		for (int i = 1; i < players.size(); i++) {
-			tempPlayerList.get(i - 1).hand = players.get(i).hand;
-			int p = i - 1;
-		}
-		//Make sure to get the first player to take the last player's hand
-		tempPlayerList.get(players.size()-1).hand = players.get(0).hand;
-		return tempPlayerList;
-	}
-
+    private void passHands(int age) {
+	    if(age % 2 == 0) {
+	        ArrayList<Card> temp = players.get(0).hand;
+	        for(int i = 0; i < players.size()-1; i++) {
+	            players.get(i).hand = players.get(i+1).hand;
+            }
+            players.get(players.size()-1).hand = temp;
+        } else {
+	        ArrayList<Card> temp = players.get(players.size()-1).hand;
+	        for(int i = 0; i < players.size() - 1; i++) {
+	            players.get(i+1).hand = players.get(i).hand;
+            }
+            players.get(0).hand = temp;
+        }
+    }
 }
