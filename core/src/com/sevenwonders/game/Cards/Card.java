@@ -16,7 +16,7 @@ public class Card {
         return info.sprite;
     }
 
-    public int canAfford(Player p) {
+    public int canAfford(Player p) { //does not test for choosing brown/gray from marketplace or caravansery
         if(p.lumber >= info.lumberCost && p.ore >= info.oreCost && p.clay >= info.clayCost && p.stone >= info.stoneCost
                 && p.textile >= info.textileCost && p.glass >= info.glassCost && p.papyrus >= info.papyrusCost &&
                 p.coins >= info.coinCost) {

@@ -41,10 +41,6 @@ public class SevenWonders extends ApplicationAdapter {
         deckManager.deal(1);
         currentPlayer = players.get(0);
 
-		for(Player p : players) {
-		    p.printHand();
-        }
-
 		//Testing military
 		players.get(0).militaryShields++;
 		players.get(0).militaryShields++;

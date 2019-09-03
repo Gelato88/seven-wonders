@@ -22,6 +22,7 @@ public class Renderer {
     private BitmapFont brownFont;
     private BitmapFont grayFont;
     private BitmapFont yellowFont;
+    private BitmapFont buttonFont;
 
     Texture topBarBackground;
     Sprite topBarBackgroundSprite;
@@ -54,6 +55,13 @@ public class Renderer {
         yellowFont = generator.generateFont(parameter);
         parameter.color = Color.WHITE;
         whiteFont = generator.generateFont(parameter);
+
+        parameter.size = 32;
+        parameter.shadowOffsetX = 0;
+        parameter.shadowOffsetY = 0;
+        parameter.borderColor = Color.BLACK;
+        parameter.borderWidth = 2;
+        parameter.color = Color.WHITE;
         generator.dispose();
     }
 
@@ -106,8 +114,27 @@ public class Renderer {
             s.setPosition(Settings.RESOLUTION.x / 2 - s.getWidth() / 2, 400f);
             s.setScale(1.5f);
             s.draw(batch);
+
+            switch(game.currentPlayer.canAfford(game.currentPlayer.selectedCard)) {
+                case 0: //cannot afford
+                    Assets.invalidButton.draw(batch);
+                    break;
+                case 1: //can afford
+                    Assets.confirmButton.draw(batch);
+                    break;
+                case 2: //must buy resources
+                    Assets.warningButton.draw(batch);
+                    break;
+            }
+
+            Assets.cancelButton.draw(batch);
+
             batch.end();
         }
+    }
+
+    private void drawOnSprite(BitmapFont font, Sprite sprite, String text, float yOffset) { //note to self: make button class
+
     }
 
     private void drawBackground() {

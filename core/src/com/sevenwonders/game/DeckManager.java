@@ -95,7 +95,6 @@ public class DeckManager {
     }
 
     private void dealAge(ArrayList<Card> deck) {
-        System.out.println(deck.size());
         int playerCounter = 0;
         for(Card c : deck) {
             game.players.get(playerCounter).addToHand(c);
