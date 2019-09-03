@@ -35,6 +35,7 @@ public class SevenWonders extends ApplicationAdapter {
         inputHandler = new InputHandler(this);
 
 
+        age = 1;
         Assets.load();
 
 		for(int i = 0; i < Settings.players; i++) {
@@ -48,7 +49,7 @@ public class SevenWonders extends ApplicationAdapter {
 
 		//Testing military
 		//Currently off since we don't need this yet
-		//militaryManager.militaryAttack();
+		//militaryManager.militaryAttack(age);
 	}
 
 	@Override
