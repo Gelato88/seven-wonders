@@ -86,8 +86,8 @@ public class SevenWonders extends ApplicationAdapter {
             players.get(players.size()-1).hand = temp;
         } else {
 	        ArrayList<Card> temp = players.get(players.size()-1).hand;
-	        for(int i = 0; i < players.size() - 1; i++) {
-	            players.get(i+1).hand = players.get(i).hand;
+	        for(int i = players.size()-1; i > 0; i--) {
+	            players.get(i).hand = players.get(i-1).hand;
             }
             players.get(0).hand = temp;
         }
