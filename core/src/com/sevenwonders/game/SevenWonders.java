@@ -7,13 +7,12 @@ import com.badlogic.gdx.Input;
 
 import com.sevenwonders.game.Cards.Card;
 import com.sevenwonders.game.Cards.CardFactory;
-import com.sevenwonders.game.Cards.InputHandler;
 
 import java.util.ArrayList;
 
 public class SevenWonders extends ApplicationAdapter {
 
-	private SpriteBatch batch;
+    private SpriteBatch batch;
 	private Renderer renderer;
 	private CardFactory cardFactory;
 	private DeckManager deckManager;

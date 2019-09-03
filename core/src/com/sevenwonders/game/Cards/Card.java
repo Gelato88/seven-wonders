@@ -2,14 +2,17 @@ package com.sevenwonders.game.Cards;
 
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.sevenwonders.game.CardButton;
 import com.sevenwonders.game.Player;
 
 public class Card {
 
     public CardInfo info;
+    public CardButton button;
 
     Card(CardInfo info) {
         this.info = info;
+        button = new CardButton(info.sprite, this);
     }
 
     public Sprite getSprite() {

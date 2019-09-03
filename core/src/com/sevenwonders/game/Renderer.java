@@ -72,9 +72,7 @@ public class Renderer {
         batch.begin();
         for(Card c : hand) {
             if(!c.equals(game.currentPlayer.selectedCard)) {
-                Sprite s = c.getSprite();
-                s.setPosition(xPos, 30f);
-                s.draw(batch);
+                c.button.draw(batch, xPos, 60f);
             }
             xPos += xIncrement;
         }
@@ -111,7 +109,7 @@ public class Renderer {
         if(game.currentPlayer.cardSelected) {
             batch.begin();
             Sprite s = game.currentPlayer.selectedCard.getSprite();
-            s.setPosition(Settings.RESOLUTION.x / 2 - s.getWidth() / 2, 400f);
+            s.setPosition(Settings.RESOLUTION.x/2 - s.getWidth()/2, 400f);
             s.setScale(1.5f);
             s.draw(batch);
 
@@ -131,10 +129,6 @@ public class Renderer {
 
             batch.end();
         }
-    }
-
-    private void drawOnSprite(BitmapFont font, Sprite sprite, String text, float yOffset) { //note to self: make button class
-
     }
 
     private void drawBackground() {
