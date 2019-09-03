@@ -91,7 +91,7 @@ public class Renderer {
         drawResourceLine(Assets.stones,"" + p.lumber, whiteFont, brownFont, yStart - increment * 1);
         drawResourceLine(Assets.stones,"" + p.ore, whiteFont, brownFont,  yStart - increment * 2);
         drawResourceLine(Assets.bricks,"" + p.clay, whiteFont, brownFont,  yStart - increment * 3);
-        drawResourceLine(Assets.stones,"" + p.stone, whiteFont, brownFont,  yStart - increment * 4);
+        drawResourceLine(Assets.ore,"" + p.stone, whiteFont, brownFont,  yStart - increment * 4);
         drawResourceLine(Assets.stones,"" + p.textile, whiteFont, grayFont, yStart - increment * 5);
         drawResourceLine(Assets.stones,"" + p.glass, whiteFont, grayFont,  yStart - increment * 6);
         drawResourceLine(Assets.stones,"" + p.papyrus, whiteFont, grayFont, yStart - increment * 7);

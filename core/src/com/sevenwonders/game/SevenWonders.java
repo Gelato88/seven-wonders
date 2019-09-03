@@ -2,7 +2,10 @@ package com.sevenwonders.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 
+import com.sevenwonders.game.Cards.Card;
 import com.sevenwonders.game.Cards.CardFactory;
 import com.sevenwonders.game.Cards.InputHandler;
 
@@ -42,15 +45,16 @@ public class SevenWonders extends ApplicationAdapter {
         currentPlayer = players.get(0);
 
 		//Testing military
-		players.get(0).militaryShields++;
-		players.get(0).militaryShields++;
-		players.get(1).militaryShields++;
-		militaryManager.militaryAttack();
+		//Currently off since we don't need this yet
+		//militaryManager.militaryAttack();
 	}
 
 	@Override
 	public void render () {
 	    inputHandler.update();
+		if(Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
+			players = passHandToRightNeighbor();
+		}
 		renderer.draw();
 	}
 	
@@ -68,6 +72,19 @@ public class SevenWonders extends ApplicationAdapter {
 			players.get(i).setLeftNeighbor(players.get(i-1));
 		}
 		players.get(0).setLeftNeighbor(players.get(players.size()-1));
+	}
+
+	private ArrayList<Player> passHandToRightNeighbor(){
+		ArrayList<Player> tempPlayerList;
+		tempPlayerList = players;
+		//Pass all the cards except for the first player, who will loop around after
+		for (int i = 1; i < players.size(); i++) {
+			tempPlayerList.get(i - 1).hand = players.get(i).hand;
+			int p = i - 1;
+		}
+		//Make sure to get the first player to take the last player's hand
+		tempPlayerList.get(players.size()-1).hand = players.get(0).hand;
+		return tempPlayerList;
 	}
 
 }

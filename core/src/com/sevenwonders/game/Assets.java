@@ -11,6 +11,7 @@ public class Assets {
     public static Sprite coins;
     public static Sprite bricks;
     public static Sprite stones;
+    public static Sprite ore;
 
     public static Sprite confirmButton;
     public static Sprite warningButton;
@@ -23,9 +24,11 @@ public class Assets {
         coins = new Sprite(new Texture("textures/coins.png"));
         bricks = new Sprite(new Texture("textures/bricks2.png"));
         stones = new Sprite(new Texture("textures/stones2.png"));
+        ore = new Sprite(new Texture("textures/ore.png"));
         coins.setSize(64f, 64f);
         bricks.setSize(64f, 64f);
         stones.setSize(64f, 64f);
+        ore.setSize(64f, 64f);
 
         confirmButton = new Sprite(new Texture("textures/ConfirmButton.png"));
         warningButton = new Sprite(new Texture("textures/WarningButton.png"));
@@ -35,9 +38,6 @@ public class Assets {
         warningButton.setPosition(Settings.RESOLUTION.x/2 - warningButton.getWidth() - 280f, Settings.RESOLUTION.y/2);
         invalidButton.setPosition(Settings.RESOLUTION.x/2 - invalidButton.getWidth() - 280f, Settings.RESOLUTION.y/2);
         cancelButton.setPosition(Settings.RESOLUTION.x/2 + 280f, Settings.RESOLUTION.y/2);
-
-
-
     }
 
 }
