@@ -22,7 +22,6 @@ public class SevenWonders extends ApplicationAdapter {
 
 	public ArrayList<Player> players;
 	public Player currentPlayer;
-	public int age;
 
 	@Override
 	public void create () {
@@ -35,7 +34,6 @@ public class SevenWonders extends ApplicationAdapter {
         inputHandler = new InputHandler(this);
 
 
-        age = 1;
         Assets.load();
 
 		for(int i = 0; i < Settings.players; i++) {
@@ -56,7 +54,7 @@ public class SevenWonders extends ApplicationAdapter {
 	public void render () {
 	    inputHandler.update();
 		if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
-		    passHands(age);
+		    passHands(Settings.currentAge);
 		}
 		renderer.draw();
 	}
