@@ -48,7 +48,7 @@ public class SevenWonders extends ApplicationAdapter {
 
 		//Testing military
 		//Currently off since we don't need this yet
-		//militaryManager.militaryAttack();
+		//militaryManager.militaryAttack(age);
 	}
 
 	@Override

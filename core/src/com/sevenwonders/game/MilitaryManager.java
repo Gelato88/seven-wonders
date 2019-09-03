@@ -10,8 +10,7 @@ public class MilitaryManager {
         this.players = players;
     }
 
-    public ArrayList militaryAttack() {
-        int currentAge = Settings.currentAge;
+    public ArrayList militaryAttack(int age) {
         ArrayList<Player> _players = players;
         for (int p = 0; p < _players.size(); p++) {
             Player playerOne = _players.get(p);
@@ -27,17 +26,17 @@ public class MilitaryManager {
             Player battleWinner = findGreaterPlayerScore(playerOne, playerTwo);
             if (battleWinner != null) {
                 if (battleWinner == _players.get(p)) {
-                    if (currentAge == 1) {
+                    if (age == 1) {
                         _players.get(p).militaryWinsOne++;
-                    } else if (currentAge == 2) {
+                    } else if (age == 2) {
                         _players.get(p).militaryWinsThree++;
-                    } else if (currentAge == 3) {
+                    } else if (age == 3) {
                         _players.get(p).militaryWinsFive++;
                     }
-                    System.out.println("Player " + p + " had the bigger military in age " + currentAge + " and beat Player " + lp);
+                    System.out.println("Player " + p + " had the bigger military in age " + age + " and beat Player " + lp);
                 } else {
                     _players.get(lp).militaryLosses++;
-                    System.out.println("Player " + p + " had the smaller military in age " + currentAge + " and lost to Player " + lp);
+                    System.out.println("Player " + p + " had the smaller military in age " + age + " and lost to Player " + lp);
                 }
             } else {
                 System.out.println("Player " + p + " and Player " + lp + " had even military strengths and drew the battle.");
