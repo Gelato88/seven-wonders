@@ -30,6 +30,8 @@ public class Player {
     public int pointsPerYellow;
     public int pointsPerPurple;
     public int pointsPerSideWonderStage;
+    public int pointsPerSideGreen;
+    public int pointsPerSideRed;
     public int pointsPerSideBrown;
     public int pointsPerSideGray;
     public int pointsPerSideYellow;
@@ -44,6 +46,7 @@ public class Player {
     public int gear;
     public int tablet;
     public int chooseGreen;
+    public int points;
 
     public ArrayList<Card> hand;
     public ArrayList<Card> played;
@@ -73,6 +76,8 @@ public class Player {
         pointsPerYellow = 0;
         pointsPerPurple = 0;
         pointsPerSideWonderStage = 0;
+        pointsPerSideGreen = 0;
+        pointsPerSideRed = 0;
         pointsPerSideBrown = 0;
         pointsPerSideGray = 0;
         pointsPerSideYellow = 0;
@@ -87,6 +92,7 @@ public class Player {
         gear = 0;
         tablet = 0;
         chooseGreen = 0;
+        points = 0;
 
         hand = new ArrayList<Card>();
         played = new ArrayList<Card>();
@@ -128,6 +134,15 @@ public class Player {
             c.printCardName();
         }
         System.out.println();
+    }
+
+    public void buy(Card c) {
+        played.add(c);
+        c.play(this);
+        System.out.println("Player bought: ");
+        c.printCardName();
+        hand.remove(c);
+        deselectCard();
     }
 
     public int calculatePoints() {

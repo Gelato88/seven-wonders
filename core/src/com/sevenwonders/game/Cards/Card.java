@@ -2,7 +2,7 @@ package com.sevenwonders.game.Cards;
 
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.sevenwonders.game.CardButton;
+import com.sevenwonders.game.Buttons.CardButton;
 import com.sevenwonders.game.Player;
 
 public class Card {
@@ -44,6 +44,10 @@ public class Card {
             }
         }
         return 0;
+    }
+
+    public void play(Player p) {
+        p.coins -= info.coinCost;
     }
 
     public void printCardName() {
