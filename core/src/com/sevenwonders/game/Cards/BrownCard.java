@@ -15,7 +15,6 @@ public class BrownCard extends Card {
         p.lumber += brownInfo.lumber;
         p.ore += brownInfo.ore;
         p.clay += brownInfo.clay;
-        p.stone += brownInfo.clay;
+        p.stone += brownInfo.stone;
     }
-
 }
