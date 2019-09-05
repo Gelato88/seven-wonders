@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.sevenwonders.game.Buttons.CancelButton;
 import com.sevenwonders.game.Cards.Card;
 
 import java.util.ArrayList;
@@ -16,7 +17,6 @@ import java.util.ArrayList;
 public class Renderer {
 
     private SpriteBatch batch;
-    private SevenWonders game;
     private GlyphLayout layout;
     private BitmapFont whiteFont;
     private BitmapFont brownFont;
@@ -24,20 +24,21 @@ public class Renderer {
     private BitmapFont yellowFont;
     private BitmapFont buttonFont;
 
+    public CancelButton cancelButton;
+
     Texture topBarBackground;
     Sprite topBarBackgroundSprite;
 
-    Renderer(SpriteBatch batch, SevenWonders game) {
+    Renderer(SpriteBatch batch) {
         this.batch = batch;
-        this.game = game;
         layout = new GlyphLayout();
         topBarBackground = new Texture(Gdx.files.internal("textures/TopBarBackground.png"));
         topBarBackgroundSprite = new Sprite(topBarBackground);
         topBarBackgroundSprite.setPosition(0, 880);
+
+        cancelButton = new CancelButton(Assets.cancelButton);
+
         loadFonts();
-
-
-
     }
 
     private void loadFonts() {
@@ -67,11 +68,11 @@ public class Renderer {
 
     private void drawCurrentPlayerHand() {
         float xIncrement = 200f;
-        ArrayList<Card> hand = game.currentPlayer.hand;
+        ArrayList<Card> hand = SevenWonders.game.currentPlayer.hand;
         float xPos = (Settings.RESOLUTION.x/2) - ((hand.size()/2f) * xIncrement - 20f);
         batch.begin();
         for(Card c : hand) {
-            if(!c.equals(game.currentPlayer.selectedCard)) {
+            if(!c.equals(SevenWonders.game.currentPlayer.selectedCard)) {
                 c.button.draw(batch, xPos, 60f);
             }
             xPos += xIncrement;
@@ -80,7 +81,7 @@ public class Renderer {
     }
 
     private void drawCurrentPlayerResources() {
-        Player p = game.currentPlayer;
+        Player p = SevenWonders.game.currentPlayer;
         float yStart = 1020f;
         float increment = 75f;
 
@@ -106,26 +107,26 @@ public class Renderer {
     }
 
     private void drawSelectedCard() {
-        if(game.currentPlayer.cardSelected) {
+        if(SevenWonders.game.currentPlayer.cardSelected) {
             batch.begin();
-            Sprite s = game.currentPlayer.selectedCard.getSprite();
-            s.setPosition(Settings.RESOLUTION.x/2 - s.getWidth()/2, 400f);
+            Sprite s = SevenWonders.game.currentPlayer.selectedCard.getSprite();
+            s.setPosition(Settings.RESOLUTION.x/2 - s.getWidth(), 400f);
             s.setScale(1.5f);
             s.draw(batch);
 
-            switch(game.currentPlayer.canAfford(game.currentPlayer.selectedCard)) {
+            switch(SevenWonders.game.currentPlayer.canAfford(SevenWonders.game.currentPlayer.selectedCard)) {
                 case 0: //cannot afford
-                    Assets.invalidButton.draw(batch);
+                    //Assets.invalidButton.draw(batch);
                     break;
                 case 1: //can afford
-                    Assets.confirmButton.draw(batch);
+                    //Assets.confirmButton.draw(batch);
                     break;
                 case 2: //must buy resources
-                    Assets.warningButton.draw(batch);
+                    //Assets.warningButton.draw(batch);
                     break;
             }
 
-            Assets.cancelButton.draw(batch);
+            cancelButton.draw(batch);
 
             batch.end();
         }
@@ -144,8 +145,6 @@ public class Renderer {
         drawCurrentPlayerHand();
         drawSelectedCard();
         drawCurrentPlayerResources();
-
-
 
     }
 

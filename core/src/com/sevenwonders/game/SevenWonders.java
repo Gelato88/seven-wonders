@@ -12,12 +12,14 @@ import java.util.ArrayList;
 
 public class SevenWonders extends ApplicationAdapter {
 
-    private SpriteBatch batch;
-	private Renderer renderer;
-	private CardFactory cardFactory;
-	private DeckManager deckManager;
-	private MilitaryManager militaryManager;
-	private InputHandler inputHandler;
+    public static SevenWonders game;
+
+    public SpriteBatch batch;
+	public Renderer renderer;
+    public CardFactory cardFactory;
+    public DeckManager deckManager;
+    public MilitaryManager militaryManager;
+    public InputHandler inputHandler;
 
 	public ArrayList<Player> players;
 	public Player currentPlayer;
@@ -25,8 +27,11 @@ public class SevenWonders extends ApplicationAdapter {
 
 	@Override
 	public void create () {
+	    game = this;
+		Assets.load();
+
 		batch = new SpriteBatch();
-		renderer = new Renderer(batch, this);
+		renderer = new Renderer(batch);
 		players = new ArrayList<Player>();
 		cardFactory = new CardFactory("json/cards.json");
 		deckManager = new DeckManager("json/decks.json", cardFactory, this);
@@ -35,7 +40,6 @@ public class SevenWonders extends ApplicationAdapter {
 
 
         age = 1;
-        Assets.load();
 
 		for(int i = 0; i < Settings.players; i++) {
 		    players.add(new Player());

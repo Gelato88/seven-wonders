@@ -34,10 +34,6 @@ public class Assets {
         warningButton = new Sprite(new Texture("textures/WarningButton.png"));
         invalidButton = new Sprite(new Texture("textures/InvalidButton.png"));
         cancelButton = new Sprite(new Texture("textures/CancelButton.png"));
-        confirmButton.setPosition(Settings.RESOLUTION.x/2 - confirmButton.getWidth() - 280f, Settings.RESOLUTION.y/2);
-        warningButton.setPosition(Settings.RESOLUTION.x/2 - warningButton.getWidth() - 280f, Settings.RESOLUTION.y/2);
-        invalidButton.setPosition(Settings.RESOLUTION.x/2 - invalidButton.getWidth() - 280f, Settings.RESOLUTION.y/2);
-        cancelButton.setPosition(Settings.RESOLUTION.x/2 + 280f, Settings.RESOLUTION.y/2);
     }
 
 }

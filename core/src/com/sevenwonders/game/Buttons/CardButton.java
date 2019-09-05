@@ -1,9 +1,8 @@
-package com.sevenwonders.game;
+package com.sevenwonders.game.Buttons;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.sevenwonders.game.Cards.Card;
+import com.sevenwonders.game.SevenWonders;
 
 public class CardButton extends Button {
 
@@ -20,18 +19,17 @@ public class CardButton extends Button {
 
     @Override
     public void click() {
-        InputHandler.game.currentPlayer.cardSelected = true;
-        InputHandler.game.currentPlayer.selectCard(card);
+        SevenWonders.game.currentPlayer.selectCard(card);
     }
 
     @Override
     public void hovering() {
-        if(Gdx.input.isTouched()) {
-            click();
-        }
-
+        super.hovering();
         float currentScale = sprite.getScaleX();
         if(currentScale < MAX_SCALE) {
+            if(currentScale < MIN_SCALE) {
+                sprite.setScale(MIN_SCALE);
+            }
             sprite.setScale(currentScale + SCALE_SPEED);
         }
         if(sprite.getScaleX() > MAX_SCALE){
@@ -43,6 +41,9 @@ public class CardButton extends Button {
     public void notHovering() {
         float currentScale = sprite.getScaleX();
         if(currentScale > MIN_SCALE) {
+            if(currentScale > MAX_SCALE) {
+                sprite.setScale(MAX_SCALE);
+            }
             sprite.setScale(currentScale - SCALE_SPEED);
         }
         if(sprite.getScaleX() < MIN_SCALE) {

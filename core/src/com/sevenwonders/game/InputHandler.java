@@ -8,10 +8,12 @@ import com.sevenwonders.game.SevenWonders;
 
 public class InputHandler {
 
-    public static SevenWonders game;
+    public SevenWonders game;
+
 
     public InputHandler(SevenWonders game) {
         this.game = game;
+
     }
 
     public void update() {
@@ -24,13 +26,7 @@ public class InputHandler {
                 c.button.checkHover(mouseX, mouseY);
             }
         } else {
-            /*
-            if(cardHover(game.currentPlayer.selectedCard, mouseX, mouseY)) {
-                if(Gdx.input.isTouched()) {
-                    game.currentPlayer.deselectCard();
-                }
-            }
-            */
+            SevenWonders.game.renderer.cancelButton.checkHover(mouseX, mouseY);
         }
     }
 }

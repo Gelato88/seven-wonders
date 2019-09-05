@@ -1,5 +1,6 @@
-package com.sevenwonders.game;
+package com.sevenwonders.game.Buttons;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -37,9 +38,15 @@ public abstract class Button {
 
     public abstract void click();
 
-    public abstract void hovering();
+    public void hovering() {
+        if(Gdx.input.isTouched()) {
+            click();
+        }
+    }
 
-    public abstract void notHovering();
+    public void notHovering() {
+
+    }
 
     public void checkHover(float mouseX, float mouseY) {
         float left = sprite.getX();
