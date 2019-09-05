@@ -19,7 +19,7 @@ public class Assets {
     public static Sprite cancelButton;
 
     public static void load() {
-        resourceBacking = new Sprite(new Texture("textures/ResourceBacking.png"));
+        resourceBacking = new Sprite(new Texture("textures/ResourceBacking2.png"));
         resourceBacking.setPosition(0, Settings.RESOLUTION.y - resourceBacking.getHeight());
         coins = new Sprite(new Texture("textures/coins.png"));
         bricks = new Sprite(new Texture("textures/bricks2.png"));
