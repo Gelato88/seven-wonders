@@ -10,6 +10,7 @@ public class GreenCard extends Card {
 
     @Override
     public void play(Player p) {
+        super.play(p);
         GreenCardInfo greenInfo = (GreenCardInfo)info;
         p.compass += greenInfo.compass;
         p.gear += greenInfo.gear;

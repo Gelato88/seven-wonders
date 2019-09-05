@@ -10,6 +10,7 @@ public class YellowCard extends Card {
 
     @Override
     public void play(Player p) {
+        super.play(p);
         YellowCardInfo yellowInfo = (YellowCardInfo)info;
         p.leftBrownDiscount += yellowInfo.leftBrownDiscount;
         p.rightBrownDiscount += yellowInfo.rightBrownDiscount;

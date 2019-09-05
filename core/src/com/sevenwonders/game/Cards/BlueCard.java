@@ -10,6 +10,7 @@ public class BlueCard extends Card {
 
     @Override
     public void play(Player p) {
+        super.play(p);
         BlueCardInfo blueInfo = (BlueCardInfo)info;
         p.points += blueInfo.points;
     }

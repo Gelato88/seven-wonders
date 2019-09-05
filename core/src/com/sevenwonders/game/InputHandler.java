@@ -27,6 +27,7 @@ public class InputHandler {
             }
         } else {
             SevenWonders.game.renderer.cancelButton.checkHover(mouseX, mouseY);
+            SevenWonders.game.renderer.confirmButton.checkHover(mouseX, mouseY);
         }
     }
 }

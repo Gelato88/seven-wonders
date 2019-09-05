@@ -10,6 +10,7 @@ public class PurpleCard extends Card {
 
     @Override
     public void play(Player p) {
+        super.play(p);
         PurpleCardInfo purpleInfo = (PurpleCardInfo)info;
         p.pointsPerSideBrown += purpleInfo.pointsPerSideBrown;
         p.pointsPerSideGray += purpleInfo.pointsPerSideGray;

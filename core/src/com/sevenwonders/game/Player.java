@@ -139,7 +139,10 @@ public class Player {
     public void buy(Card c) {
         played.add(c);
         c.play(this);
+        System.out.println("Player bought: ");
+        c.printCardName();
         hand.remove(c);
+        deselectCard();
     }
 
     public int calculatePoints() {

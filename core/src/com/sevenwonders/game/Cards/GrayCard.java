@@ -10,6 +10,7 @@ public class GrayCard extends Card {
 
     @Override
     public void play(Player p) {
+        super.play(p);
         GrayCardInfo grayInfo = (GrayCardInfo)info;
         p.textile += grayInfo.textile;
         p.glass += grayInfo.glass;

@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.sevenwonders.game.Buttons.CancelButton;
+import com.sevenwonders.game.Buttons.ConfirmButton;
 import com.sevenwonders.game.Cards.Card;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class Renderer {
     private BitmapFont buttonFont;
 
     public CancelButton cancelButton;
+    public ConfirmButton confirmButton;
 
     Texture topBarBackground;
     Sprite topBarBackgroundSprite;
@@ -37,6 +39,7 @@ public class Renderer {
         topBarBackgroundSprite.setPosition(0, 880);
 
         cancelButton = new CancelButton(Assets.cancelButton);
+        confirmButton = new ConfirmButton(Assets.confirmButton);
 
         loadFonts();
     }
@@ -88,9 +91,9 @@ public class Renderer {
         batch.begin();
         drawResourceLine(Assets.coins,"" + p.coins, whiteFont, yellowFont,  yStart);
         drawResourceLine(Assets.stones,"" + p.lumber, whiteFont, brownFont, yStart - increment * 1);
-        drawResourceLine(Assets.stones,"" + p.ore, whiteFont, brownFont,  yStart - increment * 2);
+        drawResourceLine(Assets.ore,"" + p.ore, whiteFont, brownFont,  yStart - increment * 2);
         drawResourceLine(Assets.bricks,"" + p.clay, whiteFont, brownFont,  yStart - increment * 3);
-        drawResourceLine(Assets.ore,"" + p.stone, whiteFont, brownFont,  yStart - increment * 4);
+        drawResourceLine(Assets.stones,"" + p.stone, whiteFont, brownFont,  yStart - increment * 4);
         drawResourceLine(Assets.stones,"" + p.textile, whiteFont, grayFont, yStart - increment * 5);
         drawResourceLine(Assets.stones,"" + p.glass, whiteFont, grayFont,  yStart - increment * 6);
         drawResourceLine(Assets.stones,"" + p.papyrus, whiteFont, grayFont, yStart - increment * 7);
@@ -119,7 +122,7 @@ public class Renderer {
                     //Assets.invalidButton.draw(batch);
                     break;
                 case 1: //can afford
-                    //Assets.confirmButton.draw(batch);
+                    confirmButton.draw(batch);
                     break;
                 case 2: //must buy resources
                     //Assets.warningButton.draw(batch);

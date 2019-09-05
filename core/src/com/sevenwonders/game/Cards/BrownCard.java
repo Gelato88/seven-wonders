@@ -10,6 +10,7 @@ public class BrownCard extends Card {
 
     @Override
     public void play(Player p) {
+        super.play(p);
         BrownCardInfo brownInfo = (BrownCardInfo)info;
         p.lumber += brownInfo.lumber;
         p.ore += brownInfo.ore;

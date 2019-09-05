@@ -10,6 +10,7 @@ public class RedCard extends Card {
 
     @Override
     public void play(Player p) {
+        super.play(p);
         RedCardInfo redInfo = (RedCardInfo)info;
         p.militaryShields += redInfo.military;
     }

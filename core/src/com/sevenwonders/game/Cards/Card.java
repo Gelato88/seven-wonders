@@ -47,7 +47,7 @@ public class Card {
     }
 
     public void play(Player p) {
-
+        p.coins -= info.coinCost;
     }
 
     public void printCardName() {
