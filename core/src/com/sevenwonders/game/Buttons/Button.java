@@ -39,8 +39,10 @@ public abstract class Button {
     public abstract void click();
 
     public void hovering() {
-        if(Gdx.input.isTouched()) {
-            click();
+        if(active) {
+            if (Gdx.input.isTouched()) {
+                click();
+            }
         }
     }
 

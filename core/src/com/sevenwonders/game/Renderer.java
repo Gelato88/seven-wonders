@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.sevenwonders.game.Buttons.CancelButton;
 import com.sevenwonders.game.Buttons.ConfirmButton;
+import com.sevenwonders.game.Buttons.TransitionButton;
 import com.sevenwonders.game.Cards.Card;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class Renderer {
 
     public CancelButton cancelButton;
     public ConfirmButton confirmButton;
+    public TransitionButton transitionButton;
 
     Texture topBarBackground;
     Sprite topBarBackgroundSprite;
@@ -40,6 +42,7 @@ public class Renderer {
 
         cancelButton = new CancelButton(Assets.cancelButton);
         confirmButton = new ConfirmButton(Assets.confirmButton);
+        transitionButton = new TransitionButton(Assets.transitionButton);
 
         loadFonts();
     }
@@ -73,14 +76,12 @@ public class Renderer {
         float xIncrement = 200f;
         ArrayList<Card> hand = SevenWonders.game.currentPlayer.hand;
         float xPos = (Settings.RESOLUTION.x/2) - ((hand.size()/2f) * xIncrement - 20f);
-        batch.begin();
         for(Card c : hand) {
             if(!c.equals(SevenWonders.game.currentPlayer.selectedCard)) {
                 c.button.draw(batch, xPos, 60f);
             }
             xPos += xIncrement;
         }
-        batch.end();
     }
 
     private void drawCurrentPlayerResources() {
@@ -88,7 +89,6 @@ public class Renderer {
         float yStart = 1020f;
         float increment = 75f;
 
-        batch.begin();
         drawResourceLine(Assets.coins,"" + p.coins, whiteFont, yellowFont,  yStart);
         drawResourceLine(Assets.stones,"" + p.lumber, whiteFont, brownFont, yStart - increment * 1);
         drawResourceLine(Assets.ore,"" + p.ore, whiteFont, brownFont,  yStart - increment * 2);
@@ -97,7 +97,6 @@ public class Renderer {
         drawResourceLine(Assets.stones,"" + p.textile, whiteFont, grayFont, yStart - increment * 5);
         drawResourceLine(Assets.stones,"" + p.glass, whiteFont, grayFont,  yStart - increment * 6);
         drawResourceLine(Assets.stones,"" + p.papyrus, whiteFont, grayFont, yStart - increment * 7);
-        batch.end();
     }
 
     private void drawResourceLine(Sprite sprite, String text, BitmapFont whiteFont, BitmapFont font, float y) {
@@ -111,7 +110,6 @@ public class Renderer {
 
     private void drawSelectedCard() {
         if(SevenWonders.game.currentPlayer.cardSelected) {
-            batch.begin();
             Sprite s = SevenWonders.game.currentPlayer.selectedCard.getSprite();
             s.setPosition(Settings.RESOLUTION.x/2 - s.getWidth(), 400f);
             s.setScale(1.5f);
@@ -130,8 +128,6 @@ public class Renderer {
             }
 
             cancelButton.draw(batch);
-
-            batch.end();
         }
     }
 
@@ -142,13 +138,41 @@ public class Renderer {
     public void draw() {
         Gdx.gl.glClearColor(255, 255, 255, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        batch.begin();
-        drawBackground();
-        batch.end();
-        drawCurrentPlayerHand();
-        drawSelectedCard();
-        drawCurrentPlayerResources();
+
+        switch(SevenWonders.game.currentScreen) {
+            case "transition":
+                drawTransition();
+                break;
+            case "currentPlayerBoard":
+                drawCurrentPlayerBoard();
+                break;
+            case "otherPlayerBoard":
+                drawOtherPlayerBoard();
+                break;
+            default:
+                Gdx.app.log("Renderer", "Found invalid screen to draw.");
+                break;
+        }
 
     }
 
+    private void drawCurrentPlayerBoard() {
+        batch.begin();
+        drawBackground();
+        drawCurrentPlayerResources();
+        drawCurrentPlayerHand();
+        drawSelectedCard();
+        batch.end();
+    }
+
+    private void drawTransition() {
+        batch.begin();
+        transitionButton.draw(batch);
+        batch.end();
+    }
+
+    private void drawOtherPlayerBoard() {
+        batch.begin();
+        batch.end();
+    }
 }

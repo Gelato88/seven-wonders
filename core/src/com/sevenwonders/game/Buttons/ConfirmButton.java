@@ -13,6 +13,8 @@ public class ConfirmButton extends Button {
     @Override
     public void click() {
         SevenWonders.game.currentPlayer.buy(SevenWonders.game.currentPlayer.selectedCard);
+        SevenWonders.game.nextTurn();
+        SevenWonders.game.currentScreen = "transition";
     }
 
 }

@@ -24,6 +24,8 @@ public class SevenWonders extends ApplicationAdapter {
 	public ArrayList<Player> players;
 	public Player currentPlayer;
 	public int age;
+	public int turnsThisAge;
+	public String currentScreen;
 
 	@Override
 	public void create () {
@@ -38,8 +40,8 @@ public class SevenWonders extends ApplicationAdapter {
 		militaryManager = new MilitaryManager(players);
         inputHandler = new InputHandler(this);
 
-
         age = 1;
+        turnsThisAge = 0;
 
 		for(int i = 0; i < Settings.players; i++) {
 		    players.add(new Player());
@@ -49,6 +51,7 @@ public class SevenWonders extends ApplicationAdapter {
 
         deckManager.deal(age);
         currentPlayer = players.get(0);
+        currentScreen = "transition";
 
 		//Testing military
 		//Currently off since we don't need this yet
@@ -59,7 +62,7 @@ public class SevenWonders extends ApplicationAdapter {
 	public void render () {
 	    inputHandler.update();
 		if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
-		    passHands(age);
+		    passHands();
 		}
 		renderer.draw();
 	}
@@ -80,7 +83,20 @@ public class SevenWonders extends ApplicationAdapter {
 		players.get(0).setLeftNeighbor(players.get(players.size()-1));
 	}
 
-    private void passHands(int age) {
+	public void nextTurn() {
+	    if(players.indexOf(currentPlayer) < players.size()-1) {
+	        currentPlayer = players.get(players.indexOf(currentPlayer)+1);
+        } else {
+	        currentPlayer = players.get(0);
+	        turnsThisAge++;
+	        passHands();
+        }
+        if(turnsThisAge >= 6) {
+            age++;
+        }
+    }
+
+    private void passHands() {
 	    if(age % 2 == 0) {
 	        ArrayList<Card> temp = players.get(0).hand;
 	        for(int i = 0; i < players.size()-1; i++) {

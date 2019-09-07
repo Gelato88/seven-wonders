@@ -17,6 +17,7 @@ public class Assets {
     public static Sprite warningButton;
     public static Sprite invalidButton;
     public static Sprite cancelButton;
+    public static Sprite transitionButton;
 
     public static void load() {
         resourceBacking = new Sprite(new Texture("textures/ResourceBacking2.png"));
@@ -34,6 +35,8 @@ public class Assets {
         warningButton = new Sprite(new Texture("textures/WarningButton.png"));
         invalidButton = new Sprite(new Texture("textures/InvalidButton.png"));
         cancelButton = new Sprite(new Texture("textures/CancelButton.png"));
+        transitionButton = new Sprite(new Texture("textures/ConfirmButton.png"));
+
     }
 
 }
