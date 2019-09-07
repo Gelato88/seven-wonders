@@ -128,19 +128,9 @@ public class Player {
         hand.add(card);
     }
 
-    public void printHand() {
-        System.out.println("Player " + playerNumber + ": ");
-        for(Card c : hand) {
-            c.printCardName();
-        }
-        System.out.println();
-    }
-
     public void buy(Card c) {
         played.add(c);
         c.play(this);
-        System.out.println("Player bought: ");
-        c.printCardName();
         hand.remove(c);
         deselectCard();
     }
