@@ -36,7 +36,7 @@ public class SevenWonders extends ApplicationAdapter {
 		renderer = new Renderer(batch);
 		players = new ArrayList<Player>();
 		cardFactory = new CardFactory("json/cards.json");
-		deckManager = new DeckManager("json/decks.json", cardFactory, this);
+		deckManager = new DeckManager("json/decks.json", cardFactory);
 		militaryManager = new MilitaryManager(players);
         inputHandler = new InputHandler(this);
 
@@ -91,10 +91,36 @@ public class SevenWonders extends ApplicationAdapter {
 	        turnsThisAge++;
 	        passHands();
         }
-        if(turnsThisAge >= 6) {
-            age++;
+        if(turnsThisAge >= Settings.turnsPerAge) {
+            if(age < Settings.maxAges) {
+                militaryManager.militaryAttack(age);
+                age++;
+                deckManager.deal(age);
+            } else {
+				endGame();
+            }
         }
     }
+
+    private void endGame() {
+		boolean unfinished = true;
+		ArrayList<Player> placement = new ArrayList<Player>();
+		for(Player p : players) {
+		    p.calculatePoints();
+		    placement.add(p);
+        }
+        while(unfinished) {
+            unfinished = false;
+            for(int i = 0; i < placement.size()-1; i++) {
+                if(placement.get(i).score < placement.get(i+1).score) {
+                    unfinished = true;
+                    Player temp = placement.get(i);
+                    placement.set(i, placement.get(i+1));
+                    placement.set(i+1, temp);
+                }
+            }
+        }
+	}
 
     private void passHands() {
 	    if(age % 2 == 0) {

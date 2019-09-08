@@ -12,17 +12,15 @@ import java.util.ArrayList;
 public class DeckManager {
 
     CardFactory factory;
-    SevenWonders game;
     ArrayList<Card> age1Deck;
     ArrayList<Card> age2Deck;
     ArrayList<Card> age3Deck;
 
-    public DeckManager(String path, CardFactory factory, SevenWonders game) {
+    public DeckManager(String path, CardFactory factory) {
         age1Deck = new ArrayList<Card>();
         age2Deck = new ArrayList<Card>();
         age3Deck = new ArrayList<Card>();
         this.factory = factory;
-        this.game = game;
         resetDecks(path);
         Gdx.app.log("DeckManager", "Decks loaded for " + Settings.players + " players.");
         System.out.println();
@@ -81,12 +79,15 @@ public class DeckManager {
     public void deal(int age) {
         switch(age) {
             case 1:
+                discardHands();
                 dealAge(age1Deck);
                 break;
             case 2:
+                discardHands();
                 dealAge(age2Deck);
                 break;
             case 3:
+                discardHands();
                 dealAge(age3Deck);
                 break;
             default:
@@ -94,12 +95,18 @@ public class DeckManager {
         }
     }
 
+    public void discardHands() {
+        for(Player p : SevenWonders.game.players) {
+            p.hand.clear();
+        }
+    }
+
     private void dealAge(ArrayList<Card> deck) {
         int playerCounter = 0;
         for(Card c : deck) {
-            game.players.get(playerCounter).addToHand(c);
+            SevenWonders.game.players.get(playerCounter).addToHand(c);
             playerCounter++;
-            if(playerCounter >= game.players.size()) {
+            if(playerCounter >= SevenWonders.game.players.size()) {
                 playerCounter = 0;
             }
         }

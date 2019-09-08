@@ -149,6 +149,9 @@ public class Renderer {
             case "otherPlayerBoard":
                 drawOtherPlayerBoard();
                 break;
+            case "endScreen":
+                drawEndScreen();
+                break;
             default:
                 Gdx.app.log("Renderer", "Found invalid screen to draw.");
                 break;
@@ -172,6 +175,11 @@ public class Renderer {
     }
 
     private void drawOtherPlayerBoard() {
+        batch.begin();
+        batch.end();
+    }
+
+    private void drawEndScreen() {
         batch.begin();
         batch.end();
     }

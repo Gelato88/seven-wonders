@@ -48,6 +48,8 @@ public class Player {
     public int chooseGreen;
     public int points;
 
+    public int score;
+
     public ArrayList<Card> hand;
     public ArrayList<Card> played;
     public Player leftNeighbor;
@@ -93,6 +95,8 @@ public class Player {
         tablet = 0;
         chooseGreen = 0;
         points = 0;
+
+        score = 0;
 
         hand = new ArrayList<Card>();
         played = new ArrayList<Card>();
