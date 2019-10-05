@@ -35,6 +35,9 @@ public class SevenWonders extends ApplicationAdapter {
 	public void create () {
 	    game = this;
 		Assets.load();
+		
+        camera = new OrthographicCamera(Settings.RESOLUTION.x,Settings.RESOLUTION.y);
+        camera.position.set(Settings.RESOLUTION.x/2, Settings.RESOLUTION.y/2, 0);
 
 		batch = new SpriteBatch();
 		renderer = new Renderer(batch, camera);
@@ -58,8 +61,6 @@ public class SevenWonders extends ApplicationAdapter {
         currentPlayer = players.get(0);
         currentScreen = "transition";
 
-        camera = new OrthographicCamera(Settings.RESOLUTION.x,Settings.RESOLUTION.y);
-        camera.position.set(Settings.RESOLUTION.x/2, Settings.RESOLUTION.y/2, 0);
 
 		//Testing military
 		//Currently off since we don't need this yet
