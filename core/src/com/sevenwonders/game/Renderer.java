@@ -3,6 +3,7 @@ package com.sevenwonders.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
@@ -26,6 +27,8 @@ public class Renderer {
     private BitmapFont yellowFont;
     private BitmapFont buttonFont;
 
+    private OrthographicCamera camera;
+
     public CancelButton cancelButton;
     public ConfirmButton confirmButton;
     public TransitionButton transitionButton;
@@ -33,8 +36,9 @@ public class Renderer {
     Texture topBarBackground;
     Sprite topBarBackgroundSprite;
 
-    Renderer(SpriteBatch batch) {
+    Renderer(SpriteBatch batch, OrthographicCamera camera) {
         this.batch = batch;
+        this.camera = camera;
         layout = new GlyphLayout();
         topBarBackground = new Texture(Gdx.files.internal("textures/TopBarBackground.png"));
         topBarBackgroundSprite = new Sprite(topBarBackground);
@@ -161,6 +165,8 @@ public class Renderer {
 
     private void drawCurrentPlayerBoard() {
         batch.begin();
+        batch.setProjectionMatrix(camera.combined);
+        camera.update();
         drawBackground();
         drawCurrentPlayerResources();
         drawCurrentPlayerHand();
@@ -170,17 +176,23 @@ public class Renderer {
 
     private void drawTransition() {
         batch.begin();
+        batch.setProjectionMatrix(camera.combined);
+        camera.update();
         transitionButton.draw(batch);
         batch.end();
     }
 
     private void drawOtherPlayerBoard() {
         batch.begin();
+        batch.setProjectionMatrix(camera.combined);
+        camera.update();
         batch.end();
     }
 
     private void drawEndScreen() {
         batch.begin();
+        batch.setProjectionMatrix(camera.combined);
+        camera.update();
         batch.end();
     }
 }

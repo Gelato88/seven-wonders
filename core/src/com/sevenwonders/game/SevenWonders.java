@@ -1,6 +1,7 @@
 package com.sevenwonders.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -28,13 +29,15 @@ public class SevenWonders extends ApplicationAdapter {
 	public int turnsThisAge;
 	public String currentScreen;
 
+	OrthographicCamera camera;
+
 	@Override
 	public void create () {
 	    game = this;
 		Assets.load();
 
 		batch = new SpriteBatch();
-		renderer = new Renderer(batch);
+		renderer = new Renderer(batch, camera);
 		players = new ArrayList<Player>();
 		cardFactory = new CardFactory("json/cards.json");
 		wonderFactory = new WonderFactory("json/wonders.json");
@@ -54,6 +57,9 @@ public class SevenWonders extends ApplicationAdapter {
         deckManager.deal(age);
         currentPlayer = players.get(0);
         currentScreen = "transition";
+
+        camera = new OrthographicCamera(Settings.RESOLUTION.x,Settings.RESOLUTION.y);
+        camera.position.set(Settings.RESOLUTION.x/2, Settings.RESOLUTION.y/2, 0);
 
 		//Testing military
 		//Currently off since we don't need this yet
