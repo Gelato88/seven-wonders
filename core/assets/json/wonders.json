@@ -16,7 +16,7 @@
 	    "stage1": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -26,7 +26,7 @@
 		"stage2": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -36,7 +36,7 @@
 		"stage3": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -61,7 +61,7 @@
 	    "stage1": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -71,7 +71,7 @@
 		"stage2": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -81,7 +81,7 @@
 		"stage3": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -106,7 +106,7 @@
 	    "stage1": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -116,7 +116,7 @@
 		"stage2": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -126,7 +126,7 @@
 		"stage3": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -151,7 +151,7 @@
 	    "stage1": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -161,7 +161,7 @@
 		"stage2": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -171,7 +171,7 @@
 		"stage3": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -196,7 +196,7 @@
 	    "stage1": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -206,7 +206,7 @@
 		"stage2": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -216,7 +216,7 @@
 		"stage3": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -241,7 +241,7 @@
 	    "stage1": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -251,7 +251,7 @@
 		"stage2": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -261,7 +261,7 @@
 		"stage3": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -286,7 +286,7 @@
 	    "stage1": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -296,7 +296,7 @@
 		"stage2": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
@@ -306,7 +306,7 @@
 		"stage3": {
 		  "lumberCost": 0,
 		  "oreCost": 0,
-		  "clayCpst": 0,
+		  "clayCost": 0,
 		  "stoneCost": 0,
 		  "textileCost": 0,
 		  "glassCost": 0,
