@@ -17,6 +17,7 @@ public class SevenWonders extends ApplicationAdapter {
     public SpriteBatch batch;
 	public Renderer renderer;
     public CardFactory cardFactory;
+    public WonderFactory wonderFactory;
     public DeckManager deckManager;
     public MilitaryManager militaryManager;
     public InputHandler inputHandler;
@@ -36,6 +37,7 @@ public class SevenWonders extends ApplicationAdapter {
 		renderer = new Renderer(batch);
 		players = new ArrayList<Player>();
 		cardFactory = new CardFactory("json/cards.json");
+		wonderFactory = new WonderFactory("json/wonders.json");
 		deckManager = new DeckManager("json/decks.json", cardFactory);
 		militaryManager = new MilitaryManager(players);
         inputHandler = new InputHandler(this);

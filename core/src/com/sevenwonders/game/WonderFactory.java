@@ -29,10 +29,11 @@ public class WonderFactory {
             int glass = wonder.getInt("glass");
             int papyrus = wonder.getInt("papyrus");
             int stageNumber = wonder.getInt("stages");
+            JsonValue stageInfo = wonder.get("stageInfo");
             for(int i = 1; i <= stageNumber; i++) {
                 HashMap map = new HashMap<String, Integer>();
                 String stageName = "stage" + i;
-                JsonValue stage = wonder.get(stageName);
+                JsonValue stage = stageInfo.get(stageName);
                 map.put("lumberCost", stage.getInt("lumberCost"));
                 map.put("oreCost", stage.getInt("oreCost"));
                 map.put("clayCost", stage.getInt("clayCost"));
