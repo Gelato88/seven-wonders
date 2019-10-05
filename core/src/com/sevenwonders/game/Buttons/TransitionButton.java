@@ -14,5 +14,4 @@ public class TransitionButton extends Button {
     public void click() {
         SevenWonders.game.currentScreen = "currentPlayerBoard";
     }
-
 }
